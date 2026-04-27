@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://itismusavirlik.com/sitemap.xml
