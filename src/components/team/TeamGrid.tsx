@@ -1,4 +1,5 @@
 import type { TeamMember } from '../../data/team'
+import { withBasePath } from '../../utils/paths'
 
 type TeamGridProps = {
   members: TeamMember[]
@@ -6,15 +7,16 @@ type TeamGridProps = {
 
 export function TeamGrid({ members }: TeamGridProps) {
   return (
-    <div className="row" style={{ marginTop: '40px' }}>
-      {members.map((member, index) => {
-        const columnClassName =
-          members.length === 5 && index > 2 ? 'col-md-6' : 'col-md-4'
-
+    <div className="row team-grid" style={{ marginTop: '40px' }}>
+      {members.map((member) => {
         return (
-          <div key={member.id} className={columnClassName}>
-            <div className="team-card">
-              <img src={member.image} alt={member.name} className="team-card__image" />
+          <div key={member.id} className="col-lg-4 col-md-6 d-flex team-grid__col">
+            <div className="team-card h-100 w-100">
+              <img
+                src={withBasePath(member.image)}
+                alt={member.name}
+                className="team-card__image"
+              />
               <h4>{member.name}</h4>
               <p className="team-card__role">{member.role}</p>
               <p>{member.bio}</p>

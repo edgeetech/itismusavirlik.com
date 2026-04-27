@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { galleryItems } from '../../data/gallery'
+import { withBasePath } from '../../utils/paths'
 import { SectionHeader } from '../common/SectionHeader'
 
 const MOBILE_BREAKPOINT = 768
@@ -121,7 +122,7 @@ export function GallerySection() {
                   <figure className="gallery-section__card">
                     <div className="gallery-section__image-frame">
                       <img
-                        src={item.src}
+                        src={withBasePath(item.src)}
                         alt={item.alt}
                         className="gallery-section__image"
                         loading="lazy"

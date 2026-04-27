@@ -1,10 +1,11 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { site } from '../../data/site'
+import { withBasePath } from '../../utils/paths'
 
 export function Footer() {
   const location = useLocation()
-  const teamHref = location.pathname === '/' ? '#team' : '/#team'
-  const contactHref = location.pathname === '/' ? '#contact' : '/#contact'
+  const teamHref = location.pathname === '/' ? '#team' : withBasePath('/#team')
+  const contactHref = location.pathname === '/' ? '#contact' : withBasePath('/#contact')
 
   return (
     <footer className="footer">
@@ -31,7 +32,11 @@ export function Footer() {
                   {site.email}
                 </a>
               </p>
-              <img src={site.images.logo} alt="ITIS Logo" className="footer-logo" />
+              <img
+                src={withBasePath(site.images.logo)}
+                alt="ITIS Logo"
+                className="footer-logo"
+              />
             </div>
           </div>
           <div className="col-md-3">

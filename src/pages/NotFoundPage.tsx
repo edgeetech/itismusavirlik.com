@@ -1,5 +1,6 @@
 import { Seo } from '../components/Seo'
 import { site } from '../data/site'
+import { withBasePath } from '../utils/paths'
 
 export function NotFoundPage() {
   return (
@@ -16,7 +17,7 @@ export function NotFoundPage() {
             İstediğiniz sayfa mevcut değil veya taşınmış olabilir. Ana sayfaya dönerek
             güncel içeriğe ulaşabilirsiniz.
           </p>
-          <a className="btn" href="/">
+          <a className="btn" href={withBasePath('/')}>
             Anasayfaya Dön
           </a>
         </div>

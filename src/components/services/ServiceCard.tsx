@@ -1,4 +1,5 @@
 import type { Service } from '../../data/services'
+import { withBasePath } from '../../utils/paths'
 
 type ServiceCardProps = {
   service: Service
@@ -16,7 +17,11 @@ export function ServiceCard({ service, variant }: ServiceCardProps) {
         ) : null}
         {service.title}
       </h3>
-      <img className="service-item__image" src={service.image} alt={service.imageAlt} />
+      <img
+        className="service-item__image"
+        src={withBasePath(service.image)}
+        alt={service.imageAlt}
+      />
       {variant === 'preview' ? (
         <p className="service-item__preview-body">{service.shortDescription}</p>
       ) : (

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { site } from '../../data/site'
+import { withBasePath } from '../../utils/paths'
 
 const navItems = [
   { label: 'Anasayfa', to: '/' },
@@ -13,11 +14,11 @@ export function Header() {
   const location = useLocation()
 
   const teamHref = useMemo(
-    () => (location.pathname === '/' ? '#team' : '/#team'),
+    () => (location.pathname === '/' ? '#team' : withBasePath('/#team')),
     [location.pathname],
   )
   const contactHref = useMemo(
-    () => (location.pathname === '/' ? '#contact' : '/#contact'),
+    () => (location.pathname === '/' ? '#contact' : withBasePath('/#contact')),
     [location.pathname],
   )
 
@@ -30,7 +31,7 @@ export function Header() {
           <div className="col-lg-2">
             <div className="brand">
               <NavLink to="/" onClick={closeMenu} aria-label="ITIS anasayfa">
-                <img src={site.images.logo} alt="ITIS Logo" />
+                <img src={withBasePath(site.images.logo)} alt="ITIS Logo" />
               </NavLink>
             </div>
           </div>

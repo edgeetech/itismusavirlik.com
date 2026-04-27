@@ -53,6 +53,14 @@ body {
   text-align: center;
 }
 
+.team-grid {
+  margin-top: 40px;
+}
+
+.team-grid__col {
+  margin-bottom: 30px;
+}
+
 .team-card__image {
   width: 200px;
   max-width: 100%;
@@ -320,6 +328,24 @@ body {
 @media (max-width: 991.98px) {
   .site-brand-title {
     margin: 15px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .about .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px -15px 0;
+  }
+
+  .about .team-grid > .team-grid__col {
+    float: none;
+    padding: 0 15px;
+  }
+
+  .about .team-grid > .team-grid__col:first-child,
+  .about .team-grid > .team-grid__col:last-child {
+    padding: 0 15px;
   }
 }
 

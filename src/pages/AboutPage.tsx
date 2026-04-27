@@ -6,6 +6,7 @@ import { StoryTimeline } from '../components/story/StoryTimeline'
 import { TeamGrid } from '../components/team/TeamGrid'
 import { site } from '../data/site'
 import { teamMembers } from '../data/team'
+import { withBasePath } from '../utils/paths'
 
 export function AboutPage() {
   const schema = {
@@ -13,7 +14,7 @@ export function AboutPage() {
     '@type': 'Organization',
     name: site.legalName,
     url: `${site.url}/about/`,
-    logo: `${site.url}${site.images.logo}`,
+    logo: new URL(site.images.logo, `${site.url}/`).toString(),
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
@@ -38,7 +39,7 @@ export function AboutPage() {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src={site.images.about} alt="Muhasebe" />
+              <img src={withBasePath(site.images.about)} alt="Muhasebe" />
             </div>
             <div className="col-md-6">
               <h2 className="section-title">Hakkımızda</h2>

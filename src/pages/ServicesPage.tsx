@@ -4,6 +4,7 @@ import { ServiceCard } from '../components/services/ServiceCard'
 import { services } from '../data/services'
 import { site } from '../data/site'
 import { useEqualHeightRows } from '../hooks/useEqualHeightRows'
+import { withBasePath } from '../utils/paths'
 
 export function ServicesPage() {
   const servicesRef = useEqualHeightRows<HTMLDivElement>('.service-item')
@@ -57,7 +58,7 @@ export function ServicesPage() {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src={site.images.whyUs} alt="SMMM Tabela" />
+              <img src={withBasePath(site.images.whyUs)} alt="SMMM Tabela" />
             </div>
             <div className="col-md-6">
               <h2 className="section-title">Neden Bizi Seçmelisiniz?</h2>
@@ -83,7 +84,7 @@ export function ServicesPage() {
                 <strong>Güvenilir ve Sorumluluk Sahibi:</strong> İşinizi güvenle emanet
                 edebileceğiniz, sorumluluklarını bilen bir ekibiz.
               </p>
-              <a className="btn" href="/#contact">
+              <a className="btn" href={withBasePath('/#contact')}>
                 Bize Ulaşın
               </a>
             </div>

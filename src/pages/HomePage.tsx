@@ -9,6 +9,7 @@ import { services } from '../data/services'
 import { site } from '../data/site'
 import { teamMembers } from '../data/team'
 import { useEqualHeightRows } from '../hooks/useEqualHeightRows'
+import { withBasePath } from '../utils/paths'
 
 export function HomePage() {
   const featuredMembers = teamMembers.filter((member) => member.featured)
@@ -18,7 +19,7 @@ export function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: site.legalName,
-    image: `${site.url}${site.images.logo}`,
+    image: new URL(site.images.logo, `${site.url}/`).toString(),
     url: site.url,
     telephone: site.phoneNumbers[0],
     email: site.email,
@@ -55,7 +56,7 @@ export function HomePage() {
               </a>
             </div>
             <div className="col-md-6">
-              <img src={site.images.hero} alt="ITIS Muhasebe" />
+              <img src={withBasePath(site.images.hero)} alt="ITIS Muhasebe" />
             </div>
           </div>
         </div>
@@ -65,7 +66,7 @@ export function HomePage() {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src={site.images.about} alt="Muhasebe" />
+              <img src={withBasePath(site.images.about)} alt="Muhasebe" />
             </div>
             <div className="col-md-6">
               <h2 className="section-title">Hakkımızda</h2>
@@ -79,7 +80,7 @@ export function HomePage() {
                 müşterilerimize en kaliteli hizmeti sunmak için çalışıyoruz. Tecrübe ve
                 dinamizmin bir arada olduğu güçlü bir ekibiz.
               </p>
-              <a className="btn" href="/about/">
+              <a className="btn" href={withBasePath('/about/')}>
                 Detaylı Bilgi
               </a>
             </div>
@@ -104,7 +105,7 @@ export function HomePage() {
           </div>
           <div className="row" style={{ marginTop: '30px' }}>
             <div className="col-12 text-center">
-              <a className="btn" href="/services/">
+              <a className="btn" href={withBasePath('/services/')}>
                 Tüm Hizmetlerimiz
               </a>
             </div>

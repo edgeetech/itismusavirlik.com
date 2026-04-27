@@ -14,7 +14,7 @@ export function Seo({ title, description, path, keywords, image, schema }: SeoPr
   const normalizedPath = path === '/' ? '/' : `${path.replace(/\/$/, '')}/`
   const canonicalUrl =
     normalizedPath === '/' ? site.url : `${site.url}${normalizedPath}`
-  const imageUrl = image ? `${site.url}${image}` : `${site.url}${site.images.og}`
+  const imageUrl = new URL(image ?? site.images.og, `${site.url}/`).toString()
   const keywordValue = [...site.keywords, ...(keywords ?? [])].join(', ')
 
   return (
