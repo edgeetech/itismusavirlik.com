@@ -1,18 +1,39 @@
-# inside .github/workflows/action.yml
-name: Add File to Bucket
-on: push
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: production
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@master
-      - uses: edgeetech/s3-upload-action@master
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
         with:
-          aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-          aws_bucket: ${{ secrets.AWS_S3_BUCKET }}
-          source_dir: "public"
-          destination_dir: ""
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
