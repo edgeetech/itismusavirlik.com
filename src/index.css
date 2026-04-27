@@ -267,6 +267,10 @@ body {
   flex-shrink: 0;
   object-fit: contain;
   object-position: center;
+  padding: 16px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #eff6fb, #dce9f5);
+  border: 1px solid rgb(79 132 196 / 12%);
 }
 
 .service .service-item--preview .service-item__image {

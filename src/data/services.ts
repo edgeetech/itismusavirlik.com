@@ -14,8 +14,8 @@ export const services: Service[] = [
     title: 'Muhasebe Mali Müşavirlik',
     shortDescription:
       'Kanunen tutulması zorunlu defterlerin tutulması, vergi beyannameleri, mali tablolar ve daha fazlası...',
-    image: '/img/service-1.png',
-    imageAlt: 'Muhasebe',
+    image: '/img/service-accounting.svg',
+    imageAlt: 'Muhasebe ve finansal kayıt ikonu',
     iconClass: 'fa-briefcase',
     details: [
       'Kanunen tutulması zorunlu defterlerin tutulması',
@@ -38,8 +38,8 @@ export const services: Service[] = [
     title: 'Vergi Danışmanlığı',
     shortDescription:
       'Yasal yükümlülükler konusunda bilgilendirme, mevzuat danışmanlığı ve vergi optimizasyonu...',
-    image: '/img/web-design.png',
-    imageAlt: 'Vergi',
+    image: '/img/service-tax.svg',
+    imageAlt: 'Vergi hesaplama ve danışmanlık ikonu',
     iconClass: 'fa-question',
     details: [
       'Mükelleflerimizi yasal yükümlülükleri konusunda bilgilendirmek',
@@ -57,8 +57,8 @@ export const services: Service[] = [
     title: 'Ana Sözleşme Hazırlanması ve Kuruluş İşlemleri',
     shortDescription:
       'Ana sözleşme hazırlanması, şirket kuruluş işlemleri, ticaret sicili kayıtları...',
-    image: '/img/service-2.png',
-    imageAlt: 'Kurulus',
+    image: '/img/service-incorporation.svg',
+    imageAlt: 'Kuruluş işlemleri ve belge hazırlama ikonu',
     iconClass: 'fa-envelope-square',
     details: [
       'Kurulacak şirketin faaliyetlerine ve statüsüne en uygun olan şirket türünün belirlenmesi',
@@ -75,8 +75,8 @@ export const services: Service[] = [
     title: 'Sosyal Güvenlik',
     shortDescription:
       'SGK işlemleri, işe giriş-çıkış bildirimleri, prim hesaplamaları ve daha fazlası...',
-    image: '/img/devops.png',
-    imageAlt: 'SGK',
+    image: '/img/service-sgk.svg',
+    imageAlt: 'SGK ve sosyal güvenlik koruma ikonu',
     iconClass: 'fa-user-secret',
     details: [
       'İşyeri bildirimi, sigortalı işe giriş ve işten çıkış',

@@ -8,20 +8,24 @@ type ServiceCardProps = {
 
 export function ServiceCard({ service, variant }: ServiceCardProps) {
   const cardClassName = `service-item service-item--${variant} d-flex flex-column h-100 w-100`
+  const serviceImage = (
+    <img
+      className="service-item__image"
+      src={withBasePath(service.image)}
+      alt={service.imageAlt}
+    />
+  )
 
   return (
     <div className={cardClassName}>
+      {variant === 'preview' ? serviceImage : null}
       <h3>
         {variant === 'detail' && service.iconClass ? (
           <i className={`fa ${service.iconClass} service-item__title-icon`} />
         ) : null}
         {service.title}
       </h3>
-      <img
-        className="service-item__image"
-        src={withBasePath(service.image)}
-        alt={service.imageAlt}
-      />
+      {variant === 'detail' ? serviceImage : null}
       {variant === 'preview' ? (
         <p className="service-item__preview-body">{service.shortDescription}</p>
       ) : (
