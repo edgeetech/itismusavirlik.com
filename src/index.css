@@ -12,14 +12,6 @@ body {
   background-color: #ffffff;
 }
 
-.site-brand-title {
-  margin: 0;
-  font-weight: 700;
-  font-family: Montserrat, sans-serif;
-  font-size: x-large;
-  text-align: center;
-}
-
 .topbar-lang-switcher {
   display: inline-flex;
   gap: 6px;
@@ -85,6 +77,8 @@ body {
 
 .team-grid {
   margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .team-grid__col {
@@ -360,10 +354,7 @@ body {
 }
 
 @media (max-width: 991.98px) {
-  .site-brand-title {
-    margin: 15px 0;
-  }
-}
+
 
 @media (min-width: 768px) {
   .about .team-grid {

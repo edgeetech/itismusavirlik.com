@@ -53,7 +53,6 @@ export function Header() {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-lg-2">
-            <div className="brand">
               <NavLink
                 to={getRoutePath('home', language)}
                 onClick={closeMenu}
@@ -61,12 +60,8 @@ export function Header() {
               >
                 <img src={withBasePath(site.images.logo)} alt="ITIS Logo" />
               </NavLink>
-            </div>
           </div>
-          <div className="col-lg-4">
-            <p className="site-brand-title">{site.title}</p>
-          </div>
-          <div className="col-lg-6">
+          <div className="col-lg-10">
             <div className="topbar">
               <div className="topbar-col">
                 <a href={`tel:${site.phoneNumbers[0]}`}>

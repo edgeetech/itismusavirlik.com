@@ -61,11 +61,13 @@ a:focus {
   position: relative;
 }
 
-.header .brand img {
-  width: 100%;
-  max-width: 150px;
-  height: 100%;
-  max-height: 100px;
+.header img {
+  width: 200%;
+  max-width: 450px;
+  height: 200%;
+  max-height: 300px;
+  position: relative;
+  z-index: 9999;
 }
 
 .header .topbar {
@@ -179,10 +181,24 @@ a:focus {
 
   .header .topbar .topbar-col {
     margin: 0;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .header .topbar-col a {
+    font-size: 11px;
+  }
+
+  .header .topbar-col a i {
+    margin-right: 5px;
   }
 
   .header .topbar .topbar-social {
     margin-top: 5px;
+  }
+
+  .header .topbar-social a i {
+    font-size: 14px;
   }
 
   .header .navbar {
@@ -388,7 +404,7 @@ a:focus {
 .hero h2 {
   margin: 0;
   font-size: 45px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .hero h2 span {
@@ -398,14 +414,14 @@ a:focus {
 .hero p {
   margin: 10px 0 20px 0;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .hero a.btn {
   position: relative;
   padding: 10px 35px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
   color: #ffffff;
   border: none;
@@ -506,7 +522,7 @@ a:focus {
   text-align: center;
 }
 
-.service .row > [class*='col-'] {
+.service .row > [class*="col-"] {
   display: flex;
 }
 

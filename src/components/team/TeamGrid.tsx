@@ -10,7 +10,7 @@ export function TeamGrid({ members }: TeamGridProps) {
   const { t } = useLocale()
 
   return (
-    <div className="row team-grid" style={{ marginTop: '40px' }}>
+    <div className="row team-grid justify-content-start" style={{ marginTop: '40px' }}>
       {members.map((member) => {
         return (
           <div key={member.id} className="col-lg-4 col-md-6 d-flex team-grid__col">

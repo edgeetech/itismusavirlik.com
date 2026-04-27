@@ -11,11 +11,11 @@ const siteConfig = {
     linkedin: 'https://www.linkedin.com/in/hasan-kemal-iti%C5%9Fken-6623b288/',
   },
   images: {
-    logo: '/img/logo-banner.png',
-    hero: '/img/slide2-dark.jpg',
-    about: '/img/foto2.jpg',
+    logo: '/img/logo-banner.jpeg',
+    hero: '/img/foto2.jpg',
+    about: '/img/slide2-dark.jpg',
     whyUs: '/img/foto3.jpg',
-    og: '/img/logo-banner.png',
+    og: '/img/logo-banner.jpeg',
   },
 } as const
 
