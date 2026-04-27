@@ -1,20 +1,24 @@
 import { Fragment } from 'react'
-import { historyItems } from '../../data/history'
+import { useHistoryItems } from '../../data/history'
+import { useLocale } from '../../i18n/useLocale'
 import { SectionHeader } from '../common/SectionHeader'
 
 export function StoryTimeline() {
+  const historyItems = useHistoryItems()
+  const { t } = useLocale()
+
   return (
     <div className="story" id="history">
       <div className="container-fluid">
         <SectionHeader
-          title="Şirket Geçmişi"
-          description="Köklerimiz ve bugünümüz, izlediğimiz bu yolun bazı önemli anları. 1977'den beri muhasebe ve mali müşavirlik sektöründe hizmet veriyoruz."
+          title={t('history.sectionTitle')}
+          description={t('history.sectionDescription')}
         />
         <div className="row">
           <div className="col-lg-12">
             <div className="story-container">
               <div className="story-end">
-                <p>Bugün</p>
+                <p>{t('history.todayLabel')}</p>
               </div>
               <div className="story-continue">
                 {historyItems.map((item, index) => {
@@ -78,13 +82,13 @@ export function StoryTimeline() {
                 })}
               </div>
               <div className="story-start">
-                <p>Kuruluş</p>
+                <p>{t('history.foundationLabel')}</p>
               </div>
               <div className="story-launch">
                 <div className="story-box">
                   <div className="story-text">
-                    <h3>1983 yılında Ankara Ulus&apos;da Sezen Muhasebe olarak kurulduk</h3>
-                    <p>Orhan İTİŞKEN tarafından, 6 yıllık sektör tecrübesiyle</p>
+                    <h3>{t('history.launchTitle')}</h3>
+                    <p>{t('history.launchDescription')}</p>
                   </div>
                 </div>
               </div>

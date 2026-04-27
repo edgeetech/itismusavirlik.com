@@ -1,4 +1,5 @@
 import type { RouteRecord } from 'vite-react-ssg'
+import { LanguageSync } from './components/LanguageSync'
 import { HelmetProvider } from 'react-helmet-async'
 import { ScrollManager } from './components/ScrollManager'
 import { MainLayout } from './components/layout/MainLayout'
@@ -10,6 +11,7 @@ import { ServicesPage } from './pages/ServicesPage'
 function RootLayout() {
   return (
     <HelmetProvider>
+      <LanguageSync />
       <ScrollManager />
       <MainLayout />
     </HelmetProvider>
@@ -35,6 +37,26 @@ const routes: RouteRecord[] = [
         path: 'services',
         element: <ServicesPage />,
         entry: 'src/pages/ServicesPage.tsx',
+      },
+      {
+        path: 'en',
+        children: [
+          {
+            index: true,
+            element: <HomePage />,
+            entry: 'src/pages/HomePage.tsx',
+          },
+          {
+            path: 'about',
+            element: <AboutPage />,
+            entry: 'src/pages/AboutPage.tsx',
+          },
+          {
+            path: 'services',
+            element: <ServicesPage />,
+            entry: 'src/pages/ServicesPage.tsx',
+          },
+        ],
       },
       {
         path: '*',

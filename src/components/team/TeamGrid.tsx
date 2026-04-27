@@ -1,4 +1,5 @@
 import type { TeamMember } from '../../data/team'
+import { useLocale } from '../../i18n/useLocale'
 import { withBasePath } from '../../utils/paths'
 
 type TeamGridProps = {
@@ -6,6 +7,8 @@ type TeamGridProps = {
 }
 
 export function TeamGrid({ members }: TeamGridProps) {
+  const { t } = useLocale()
+
   return (
     <div className="row team-grid" style={{ marginTop: '40px' }}>
       {members.map((member) => {
@@ -27,7 +30,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                       href={member.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`${member.name} LinkedIn`}
+                      aria-label={t('team.aria.linkedin', { name: member.name })}
                     >
                       <i className="fab fa-linkedin" />
                     </a>
@@ -37,12 +40,15 @@ export function TeamGrid({ members }: TeamGridProps) {
                       href={member.social.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`${member.name} Facebook`}
+                      aria-label={t('team.aria.facebook', { name: member.name })}
                     >
                       <i className="fab fa-facebook" />
                     </a>
                   ) : null}
-                  <a href={`mailto:${member.email}`} aria-label={`${member.name} e-posta`}>
+                  <a
+                    href={`mailto:${member.email}`}
+                    aria-label={t('team.aria.email', { name: member.name })}
+                  >
                     <i className="fa fa-envelope" />
                   </a>
                 </div>

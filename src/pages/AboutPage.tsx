@@ -4,16 +4,24 @@ import { GallerySection } from '../components/gallery/GallerySection'
 import { StatsStrip } from '../components/content/StatsStrip'
 import { StoryTimeline } from '../components/story/StoryTimeline'
 import { TeamGrid } from '../components/team/TeamGrid'
-import { site } from '../data/site'
-import { teamMembers } from '../data/team'
+import { useSite } from '../data/site'
+import { useTeamMembers } from '../data/team'
+import { getRoutePath, useCurrentLanguage } from '../i18n/routing'
+import { useLocale } from '../i18n/useLocale'
 import { withBasePath } from '../utils/paths'
 
 export function AboutPage() {
+  const language = useCurrentLanguage()
+  const { t } = useLocale()
+  const site = useSite()
+  const teamMembers = useTeamMembers()
+  const aboutPath = getRoutePath('about', language)
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: site.legalName,
-    url: `${site.url}/about/`,
+    url: `${site.url}${aboutPath}`,
     logo: new URL(site.images.logo, `${site.url}/`).toString(),
     contactPoint: {
       '@type': 'ContactPoint',
@@ -28,9 +36,10 @@ export function AboutPage() {
   return (
     <>
       <Seo
-        title={`Hakkımızda - ${site.legalName}`}
-        description="ITIS Muhasebe Mali Müşavirlik hakkında bilgiler, tarihçemiz ve ekibimiz."
-        path="/about"
+        title={t('seo.about.title')}
+        description={t('seo.about.description')}
+        path={aboutPath}
+        routeKey="about"
         image={site.images.about}
         schema={schema}
       />
@@ -39,26 +48,13 @@ export function AboutPage() {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src={withBasePath(site.images.about)} alt="Muhasebe" />
+              <img src={withBasePath(site.images.about)} alt={t('aboutPage.imageAlt')} />
             </div>
             <div className="col-md-6">
-              <h2 className="section-title">Hakkımızda</h2>
-              <p style={{ textAlign: 'justify' }}>
-                Orhan İtişken tarafından 1983 yılında Ankara Ulus&apos;da <strong>Sezen
-                Muhasebe</strong> adıyla faaliyete başlayan firmamızda sizin ve
-                işletmenizin tüm ihtiyaçları için var gücümüzle çalışıyoruz.
-              </p>
-              <p style={{ textAlign: 'justify' }}>
-                Muhasebe ve mali müşavirlik alanında 40 yılı aşkın tecrübemizle,
-                müşterilerimize en kaliteli hizmeti sunmak için çalışıyoruz. Tecrübe ve
-                dinamizmin bir arada olduğu güçlü bir ekibiz.
-              </p>
-              <p style={{ textAlign: 'justify' }}>
-                Firmamız, yıllar içinde Ankara&apos;nın farklı bölgelerinde hizmet vermiş,
-                2020 yılında Çankaya Mutlukent&apos;teki modern ofisimize taşınmıştır. Bu
-                süreçte, sürekli gelişen mevzuata ayak uydurarak, müşterilerimize en güncel
-                ve doğru hizmeti sunmayı ilke edindik.
-              </p>
+              <h2 className="section-title">{t('aboutPage.title')}</h2>
+              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.0')}</p>
+              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.1')}</p>
+              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.2')}</p>
             </div>
           </div>
         </div>
@@ -70,8 +66,8 @@ export function AboutPage() {
         <div className="container-fluid">
           <SectionHeader
             centered
-            title="Ekibimiz"
-            description="Tecrübe ve dinamizmin bir arada olduğu güçlü bir ekibiz"
+            title={t('aboutPage.team.title')}
+            description={t('aboutPage.team.description')}
           />
           <TeamGrid members={teamMembers} />
         </div>

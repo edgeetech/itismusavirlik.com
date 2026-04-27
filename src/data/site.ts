@@ -1,12 +1,8 @@
-export const site = {
-  name: 'ITIS Muhasebe Mali Müşavirlik',
-  legalName: 'ITIS Muhasebe ve Mali Müşavirlik',
-  title: 'ITIS Muhasebe ve Mali Müşavirlik',
-  city: 'Ankara',
+import { useMemo } from 'react'
+import { useLocale } from '../i18n/useLocale'
+
+const siteConfig = {
   url: 'https://itismusavirlik.com',
-  description:
-    "ITIS Muhasebe Mali Müşavirlik Ankara'da muhasebe, vergi danışmanlığı, sosyal güvenlik ve kuruluş işlemleri hizmetleri sunar.",
-  address: 'Mutlukent Mah. 2002 sokak Park Plaza No: 10/3, Çankaya / ANKARA',
   phoneNumbers: ['(0312) 431 75 66', '(0312) 431 89 74'],
   email: 'info@itismusavirlik.com',
   foundedYear: '1983',
@@ -21,14 +17,27 @@ export const site = {
     whyUs: '/img/foto3.jpg',
     og: '/img/logo-banner.png',
   },
-  keywords: [
-    'Ankara SMMM',
-    'Muhasebe',
-    'Mali Müşavir',
-    'Vergi Danışmanlığı',
-    'Sosyal Güvenlik',
-    'Kuruluş İşlemleri',
-    'Çayyolu',
-    'Mutlukent',
-  ],
 } as const
+
+type SiteTranslation = {
+  name: string
+  legalName: string
+  title: string
+  city: string
+  description: string
+  address: string
+  keywords: string[]
+}
+
+export function useSite() {
+  const { t } = useLocale()
+
+  return useMemo(
+    () =>
+      ({
+        ...siteConfig,
+        ...(t('site', { returnObjects: true }) as SiteTranslation),
+      }) as typeof siteConfig & SiteTranslation,
+    [t],
+  )
+}

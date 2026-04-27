@@ -1,3 +1,6 @@
+import { useMemo } from 'react'
+import { useLocale } from '../i18n/useLocale'
+
 export type TeamMember = {
   id: string
   name: string
@@ -12,21 +15,15 @@ export type TeamMember = {
   }
 }
 
-export const teamMembers: TeamMember[] = [
+const teamMeta = [
   {
     id: 'orhan-itisken',
-    name: 'Orhan İTİŞKEN',
-    role: 'Serbest Muhasebeci Mali Müşavir (SMMM)',
-    bio: '1959 Ankara doğumlu, 1977 yılında muhasebe sektörüne başladı, 1983 yılında kendi işini kurdu. Firmamızın kurucusu.',
     image: '/img/orhanItisken.jpg',
     email: 'orhan@itismusavirlik.com',
     featured: true,
   },
   {
     id: 'hasan-kemal-itisken',
-    name: 'Hasan Kemal İTİŞKEN',
-    role: 'Serbest Muhasebeci Mali Müşavir (SMMM)',
-    bio: '1988 Ankara doğumlu, 2007 yılında aktif çalışmaya başladı. 2017 yılında SMMM oldu.',
     image: '/img/hasanKemal.jpg',
     email: 'hasankemal@itismusavirlik.com',
     featured: true,
@@ -37,29 +34,43 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 'mehmet-bersan-itisken',
-    name: 'Mehmet Berşan İTİŞKEN',
-    role: 'Muhasebe Mali ve İdari İşler Yöneticisi',
-    bio: '1995 Ankara doğumlu, 2020 Gazi Üniversitesi mezunu.',
     image: '/img/bersanTest.png',
     email: 'bersan@itismusavirlik.com',
     featured: true,
   },
   {
     id: 'baris-kus',
-    name: 'Barış Kuş',
-    role: 'Muhasebe ve Mali İşler Personeli',
-    bio: '1996 Ankara doğumlu, 2021 Başkent Üniversitesi mezunu.',
     image: '/img/bariskus.jpg',
     email: 'baris@itismusavirlik.com',
     featured: false,
   },
   {
     id: 'ahmet-can-demirelli',
-    name: 'Ahmet Can Demirelli',
-    role: 'Muhasebe ve Mali İşler Personeli',
-    bio: '1998 Ankara doğumlu, 2021 Uşak Üniversitesi mezunu.',
     image: '/img/ahmetCanDemirelli.jpg',
     email: 'ahmetcan@itismusavirlik.com',
     featured: false,
   },
-]
+] as const
+
+type TeamTranslation = {
+  name: string
+  role: string
+  bio: string
+}
+
+export function useTeamMembers() {
+  const { t } = useLocale()
+
+  return useMemo(() => {
+    const members = t('team.members', {
+      returnObjects: true,
+    }) as Record<(typeof teamMeta)[number]['id'], TeamTranslation>
+
+    return teamMeta.map((member) => ({
+      ...member,
+      name: members[member.id].name,
+      role: members[member.id].role,
+      bio: members[member.id].bio,
+    }))
+  }, [t])
+}

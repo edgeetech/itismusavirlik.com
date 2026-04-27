@@ -1,6 +1,8 @@
-import { stats } from '../../data/stats'
+import { useStats } from '../../data/stats'
 
 export function StatsStrip() {
+  const stats = useStats()
+
   return (
     <div className="service stats-strip">
       <div className="container-fluid">

@@ -1,6 +1,30 @@
-export const stats = [
-  { icon: 'fa-clock', value: '43', label: 'Yıllık Tecrübe' },
-  { icon: 'fa-users', value: '9', label: 'Çalışan' },
-  { icon: 'fa-building', value: '46', label: 'Sektöre Hizmet' },
-  { icon: 'fa-smile', value: '200+', label: 'Mutlu Müşteri' },
+import { useMemo } from 'react'
+import { useLocale } from '../i18n/useLocale'
+
+const statIcons = [
+  { id: 'experience', icon: 'fa-clock' },
+  { id: 'employees', icon: 'fa-users' },
+  { id: 'sectors', icon: 'fa-building' },
+  { id: 'clients', icon: 'fa-smile' },
 ] as const
+
+type StatTranslation = {
+  value: string
+  label: string
+}
+
+export function useStats() {
+  const { t } = useLocale()
+
+  return useMemo(() => {
+    const items = t('stats.items', {
+      returnObjects: true,
+    }) as Record<(typeof statIcons)[number]['id'], StatTranslation>
+
+    return statIcons.map((stat) => ({
+      icon: stat.icon,
+      value: items[stat.id].value,
+      label: items[stat.id].label,
+    }))
+  }, [t])
+}

@@ -20,6 +20,36 @@ body {
   text-align: center;
 }
 
+.topbar-lang-switcher {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.topbar-lang-switcher__link {
+  min-width: 34px;
+  padding: 4px 8px;
+  border: 1px solid rgb(84 227 208 / 35%);
+  border-radius: 999px;
+  color: #00539c;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.topbar-lang-switcher__link.is-active,
+.topbar-lang-switcher__link:hover,
+.topbar-lang-switcher__link:focus-visible {
+  background-color: #54e3d0;
+  border-color: #54e3d0;
+  color: #ffffff;
+}
+
 .stats-strip {
   background-color: #f8f9fa;
   padding: 60px 0;

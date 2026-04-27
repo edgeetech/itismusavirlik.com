@@ -5,15 +5,25 @@ import { GallerySection } from '../components/gallery/GallerySection'
 import { StatsStrip } from '../components/content/StatsStrip'
 import { ServiceCard } from '../components/services/ServiceCard'
 import { TeamGrid } from '../components/team/TeamGrid'
-import { services } from '../data/services'
-import { site } from '../data/site'
-import { teamMembers } from '../data/team'
+import { useServices } from '../data/services'
+import { useSite } from '../data/site'
+import { useTeamMembers } from '../data/team'
+import { getRoutePath, useCurrentLanguage } from '../i18n/routing'
+import { useLocale } from '../i18n/useLocale'
 import { useEqualHeightRows } from '../hooks/useEqualHeightRows'
 import { withBasePath } from '../utils/paths'
 
 export function HomePage() {
+  const language = useCurrentLanguage()
+  const { t } = useLocale()
+  const site = useSite()
+  const services = useServices()
+  const teamMembers = useTeamMembers()
   const featuredMembers = teamMembers.filter((member) => member.featured)
   const servicesRef = useEqualHeightRows<HTMLDivElement>('.service-item')
+  const aboutPath = getRoutePath('about', language)
+  const servicesPath = getRoutePath('services', language)
+  const homePath = getRoutePath('home', language)
 
   const schema = {
     '@context': 'https://schema.org',
@@ -35,9 +45,10 @@ export function HomePage() {
   return (
     <>
       <Seo
-        title={`${site.legalName} - Ankara`}
-        description={site.description}
-        path="/"
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+        path={homePath}
+        routeKey="home"
         image={site.images.hero}
         schema={schema}
       />
@@ -50,13 +61,13 @@ export function HomePage() {
               <h2>
                 <span>{site.city.toUpperCase()}</span>
               </h2>
-              <p>Sizin ve Şirketiniz İçin 1983&apos;ten Beri</p>
+              <p>{t('home.hero.tagline')}</p>
               <a className="btn" href="#services">
-                Hizmetlerimiz
+                {t('common.actions.exploreServices')}
               </a>
             </div>
             <div className="col-md-6">
-              <img src={withBasePath(site.images.hero)} alt="ITIS Muhasebe" />
+              <img src={withBasePath(site.images.hero)} alt={t('home.hero.imageAlt')} />
             </div>
           </div>
         </div>
@@ -66,22 +77,14 @@ export function HomePage() {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <img src={withBasePath(site.images.about)} alt="Muhasebe" />
+              <img src={withBasePath(site.images.about)} alt={t('home.about.imageAlt')} />
             </div>
             <div className="col-md-6">
-              <h2 className="section-title">Hakkımızda</h2>
-              <p style={{ textAlign: 'justify' }}>
-                Orhan İtişken tarafından 1983 yılında Ankara Ulus&apos;da Sezen Muhasebe
-                adıyla faaliyete başlayan firmamızda sizin ve işletmenizin tüm ihtiyaçları
-                için var gücümüzle çalışıyoruz.
-              </p>
-              <p style={{ textAlign: 'justify' }}>
-                Muhasebe ve mali müşavirlik alanında 40 yılı aşkın tecrübemizle,
-                müşterilerimize en kaliteli hizmeti sunmak için çalışıyoruz. Tecrübe ve
-                dinamizmin bir arada olduğu güçlü bir ekibiz.
-              </p>
-              <a className="btn" href={withBasePath('/about/')}>
-                Detaylı Bilgi
+              <h2 className="section-title">{t('home.about.title')}</h2>
+              <p style={{ textAlign: 'justify' }}>{t('home.about.paragraphs.0')}</p>
+              <p style={{ textAlign: 'justify' }}>{t('home.about.paragraphs.1')}</p>
+              <a className="btn" href={withBasePath(aboutPath)}>
+                {t('common.actions.learnMore')}
               </a>
             </div>
           </div>
@@ -93,8 +96,8 @@ export function HomePage() {
       <div ref={servicesRef} className="service" id="services">
         <div className="container-fluid">
           <SectionHeader
-            title="Neler Yapıyoruz"
-            description="Sunduğumuz hizmetlerin bazıları şunlardır"
+            title={t('home.services.title')}
+            description={t('home.services.description')}
           />
           <div className="row">
             {services.map((service) => (
@@ -105,8 +108,8 @@ export function HomePage() {
           </div>
           <div className="row" style={{ marginTop: '30px' }}>
             <div className="col-12 text-center">
-              <a className="btn" href={withBasePath('/services/')}>
-                Tüm Hizmetlerimiz
+              <a className="btn" href={withBasePath(servicesPath)}>
+                {t('common.actions.allServices')}
               </a>
             </div>
           </div>
@@ -117,8 +120,8 @@ export function HomePage() {
         <div className="container-fluid">
           <SectionHeader
             centered
-            title="Ekibimiz"
-            description="Tecrübe ve dinamizmin bir arada olduğu güçlü bir ekibiz"
+            title={t('home.team.title')}
+            description={t('home.team.description')}
           />
           <TeamGrid members={featuredMembers} />
         </div>

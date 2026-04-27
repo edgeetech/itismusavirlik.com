@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
-import { galleryItems } from '../../data/gallery'
+import { useGalleryItems } from '../../data/gallery'
+import { useLocale } from '../../i18n/useLocale'
 import { withBasePath } from '../../utils/paths'
 import { SectionHeader } from '../common/SectionHeader'
 
@@ -24,6 +25,8 @@ function getSlideGap(width: number) {
 }
 
 export function GallerySection() {
+  const galleryItems = useGalleryItems()
+  const { t } = useLocale()
   const viewportRef = useRef<HTMLDivElement | null>(null)
   const [slidesPerView, setSlidesPerView] = useState(1)
   const [viewportWidth, setViewportWidth] = useState(0)
@@ -48,7 +51,7 @@ export function GallerySection() {
     window.addEventListener('resize', handleResize)
 
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [galleryItems.length])
 
   const maxIndex = Math.max(galleryItems.length - slidesPerView, 0)
   const pageCount = maxIndex + 1
@@ -88,8 +91,8 @@ export function GallerySection() {
       <div className="container-fluid">
         <SectionHeader
           centered
-          title="Bizden Fotoğraflar"
-          description="Yıllardır bu işi severek ve kendimizi geliştirerek yapıyoruz"
+          title={t('gallery.sectionTitle')}
+          description={t('gallery.sectionDescription')}
         />
         <div
           className="gallery-section__carousel"
@@ -104,7 +107,7 @@ export function GallerySection() {
               type="button"
               className="gallery-section__control gallery-section__control--prev"
               onClick={showPreviousSlide}
-              aria-label="Önceki fotoğrafları göster"
+              aria-label={t('gallery.controls.previous')}
             >
               <span aria-hidden="true">‹</span>
             </button>
@@ -141,7 +144,7 @@ export function GallerySection() {
               type="button"
               className="gallery-section__control gallery-section__control--next"
               onClick={showNextSlide}
-              aria-label="Sonraki fotoğrafları göster"
+              aria-label={t('gallery.controls.next')}
             >
               <span aria-hidden="true">›</span>
             </button>
@@ -149,14 +152,14 @@ export function GallerySection() {
         </div>
 
         {shouldAutoplay ? (
-          <div className="gallery-section__dots" aria-label="Galeri gezinme noktaları">
+          <div className="gallery-section__dots" aria-label={t('gallery.controls.dots')}>
             {Array.from({ length: pageCount }, (_, index) => (
               <button
                 key={index}
                 type="button"
                 className={`gallery-section__dot${index === currentIndex ? ' is-active' : ''}`}
                 onClick={() => setCurrentIndex(index)}
-                aria-label={`${index + 1}. galeri görünümünü göster`}
+                aria-label={t('gallery.controls.dotLabel', { index: index + 1 })}
                 aria-pressed={index === currentIndex}
               />
             ))}

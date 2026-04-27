@@ -1,28 +1,52 @@
 import { useMemo, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { site } from '../../data/site'
+import { useSite } from '../../data/site'
+import {
+  getHomeAnchorPath,
+  getLocalizedPathname,
+  getRoutePath,
+  normalizePath,
+  useCurrentLanguage,
+} from '../../i18n/routing'
+import { useLocale } from '../../i18n/useLocale'
 import { withBasePath } from '../../utils/paths'
-
-const navItems = [
-  { label: 'Anasayfa', to: '/' },
-  { label: 'Hakkımızda', to: '/about/' },
-  { label: 'Hizmetlerimiz', to: '/services/' },
-] as const
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
+  const language = useCurrentLanguage()
+  const { t } = useLocale()
+  const site = useSite()
+
+  const navItems = useMemo(
+    () => [
+      { label: t('common.nav.home'), to: getRoutePath('home', language) },
+      { label: t('common.nav.about'), to: getRoutePath('about', language) },
+      { label: t('common.nav.services'), to: getRoutePath('services', language) },
+    ],
+    [language, t],
+  )
+
+  const isHomePage = normalizePath(location.pathname) === getRoutePath('home', language)
 
   const teamHref = useMemo(
-    () => (location.pathname === '/' ? '#team' : withBasePath('/#team')),
-    [location.pathname],
+    () =>
+      isHomePage ? '#team' : withBasePath(getHomeAnchorPath('team', language)),
+    [isHomePage, language],
   )
   const contactHref = useMemo(
-    () => (location.pathname === '/' ? '#contact' : withBasePath('/#contact')),
-    [location.pathname],
+    () =>
+      isHomePage ? '#contact' : withBasePath(getHomeAnchorPath('contact', language)),
+    [isHomePage, language],
   )
 
   const closeMenu = () => setIsOpen(false)
+
+  const getLanguageHref = (targetLanguage: 'tr' | 'en') => {
+    const nextPath = getLocalizedPathname(location.pathname, targetLanguage)
+    const nextHash = isHomePage ? location.hash : ''
+    return withBasePath(`${nextPath}${nextHash}`)
+  }
 
   return (
     <header className="header">
@@ -30,7 +54,11 @@ export function Header() {
         <div className="row align-items-center">
           <div className="col-lg-2">
             <div className="brand">
-              <NavLink to="/" onClick={closeMenu} aria-label="ITIS anasayfa">
+              <NavLink
+                to={getRoutePath('home', language)}
+                onClick={closeMenu}
+                aria-label={t('header.logoAriaLabel')}
+              >
                 <img src={withBasePath(site.images.logo)} alt="ITIS Logo" />
               </NavLink>
             </div>
@@ -64,18 +92,40 @@ export function Header() {
                   </a>
                 </div>
               </div>
+              <div className="topbar-col">
+                <div
+                  className="topbar-lang-switcher"
+                  role="group"
+                  aria-label={t('common.languageSwitcherLabel')}
+                >
+                  {(['tr', 'en'] as const).map((targetLanguage) => (
+                    <a
+                      key={targetLanguage}
+                      href={getLanguageHref(targetLanguage)}
+                      className={`topbar-lang-switcher__link${
+                        language === targetLanguage ? ' is-active' : ''
+                      }`}
+                      onClick={closeMenu}
+                      hrefLang={targetLanguage}
+                      lang={targetLanguage}
+                    >
+                      {t(`common.languages.${targetLanguage}`)}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <nav className="navbar navbar-expand-lg bg-light navbar-light">
               <button
                 type="button"
                 className={`navbar-toggle header__menu-toggle${isOpen ? ' is-open' : ''}`}
-                aria-label="Navigasyonu aç veya kapat"
+                aria-label={t('header.menuToggleLabel')}
                 aria-controls="navbarCollapse"
                 aria-expanded={isOpen}
                 onClick={() => setIsOpen((value) => !value)}
               >
-                <span className="sr-only">Menüyü aç veya kapat</span>
+                <span className="sr-only">{t('header.menuToggleScreenReader')}</span>
                 <span className="header__menu-toggle-box" aria-hidden="true">
                   <span className="header__menu-toggle-bar" />
                   <span className="header__menu-toggle-bar" />
@@ -102,12 +152,12 @@ export function Header() {
                   ))}
                   <li>
                     <a href={teamHref} onClick={closeMenu}>
-                      Ekibimiz
+                      {t('common.nav.team')}
                     </a>
                   </li>
                   <li>
                     <a href={contactHref} onClick={closeMenu}>
-                      İletişim
+                      {t('common.nav.contact')}
                     </a>
                   </li>
                 </ul>
