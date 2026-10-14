@@ -91,7 +91,8 @@ img { max-width: 100%; }
 .footer { background: var(--ink); padding-top: 54px; }
 .footer .footer-about h2, .footer .footer-link h2 { color: white; margin-bottom: 24px; text-transform: none; }
 .footer .footer-about p, .footer .footer-link a, .footer .footer-about a, .footer .copyright p, .footer .copyright p a { color: #dce6ec; font-size: 15px; }
-.footer .copyright p, .copyright-note { font-size: 13px; }
+.footer .copyright p { font-size: 13px; }
+.footer .copyright .copyright-note, .footer .copyright .copyright-note a { font-size: 9px; }
 .footer .footer-about, .footer .footer-link { padding: 0; }
 .footer-logo { background: white; width: 200px; padding: 8px; border-radius: 6px; }
 @media (max-width: 991.98px) {
