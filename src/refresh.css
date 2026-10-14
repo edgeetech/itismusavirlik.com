@@ -1,4 +1,11 @@
 /* Readability and layout layer; loaded after the legacy template. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/InterVariable.woff2') format('woff2');
+}
 :root {
   --ink: #112c42;
   --muted: #465b6b;
@@ -6,8 +13,8 @@
   --line: #dbe3e7;
   --surface: #f3f6f7;
 }
-body { font-family: Arial, Helvetica, sans-serif; color: var(--ink); font-size: 17px; line-height: 1.7; }
-h1, h2, h3, h4 { color: var(--ink); font-weight: 700; line-height: 1.22; letter-spacing: -.025em; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-optical-sizing: auto; color: var(--ink); font-size: 17px; line-height: 1.7; }
+h1, h2, h3, h4 { color: var(--ink); font-weight: 600; line-height: 1.22; letter-spacing: -.035em; }
 p, li { color: var(--muted); }
 p { max-width: 65ch; }
 a { color: #17537b; }
@@ -32,15 +39,15 @@ img { max-width: 100%; }
 .header .topbar-lang-switcher__link.is-active,
 .header .topbar-lang-switcher__link:hover { color: white; background: var(--ink); border-color: var(--ink); }
 .header .navbar { margin: 8px 0 0; min-height: 44px; border-radius: 8px; }
-.header .navbar-nav > li > a { font-size: 15px; font-weight: 600; min-height: 44px; }
+.header .navbar-nav > li > a { font-size: 15px; font-weight: 500; min-height: 44px; }
 .header .navbar-nav > li > a.active { color: var(--ink); text-decoration: underline; text-underline-offset: 7px; }
 .hero { padding: 70px 0; background: #f3f6f7; border-bottom: 1px solid var(--line); }
-.hero h1 { font-size: clamp(36px, 4.4vw, 60px); max-width: 17ch; margin: 16px 0 24px; }
+.hero h1 { font-size: clamp(38px, 4.6vw, 62px); font-weight: 550; letter-spacing: -.045em; line-height: 1.1; max-width: 17ch; margin: 16px 0 24px; }
 .hero p.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0; }
 .hero p.hero-description { font-size: 19px; line-height: 1.7; max-width: 45ch; margin-bottom: 28px; }
 .hero img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.wrapper main a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border: 1px solid var(--ink); background: var(--ink); border-radius: 8px; font-size: 15px; font-weight: 700; color: white; text-transform: none; line-height: 1.4; }
+.wrapper main a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; border: 1px solid var(--ink); background: var(--ink); border-radius: 8px; font-size: 15px; font-weight: 600; color: white; text-transform: none; line-height: 1.4; }
 .wrapper main a.btn:hover { background: #254d69; border-color: #254d69; }
 .wrapper main a.btn-secondary { background: transparent; color: var(--ink); }
 .wrapper main a.btn-secondary:hover { background: white; }
@@ -52,7 +59,7 @@ img { max-width: 100%; }
 .about p, .news p { font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
 .section-header { max-width: 740px; margin-bottom: 36px; text-align: left; padding-bottom: 0; }
 .section-header h1 { font-size: clamp(34px, 4vw, 48px); }
-.section-header h2, .section-title, .about h2.section-title { font-size: clamp(28px, 3vw, 38px); text-transform: none; padding-bottom: 0; margin-bottom: 20px; }
+.section-header h2, .section-title, .about h2.section-title { font-size: clamp(28px, 3vw, 38px); font-weight: 600; text-transform: none; padding-bottom: 0; margin-bottom: 20px; }
 .section-header p { font-size: 18px; line-height: 1.7; }
 .section-header::after, .section-title::after, .about h2.section-title::after { display: none; }
 .practice-facts { background: white; border-bottom: 1px solid var(--line); }
@@ -62,7 +69,7 @@ img { max-width: 100%; }
 .practice-facts dd { margin: 0; font-size: 24px; font-weight: 700; line-height: 1.5; }
 .service .row > [class*='col-'] { margin-bottom: 24px; }
 .service .service-item, .service .service-item:hover { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 26px; margin: 0; box-shadow: 0 8px 24px rgb(17 44 66 / 4%); text-align: left; }
-.service .service-item h3 { font-size: 21px; line-height: 1.4; letter-spacing: -.02em; margin: 22px 0 0; }
+.service .service-item h3 { font-size: 21px; font-weight: 600; line-height: 1.4; letter-spacing: -.025em; margin: 22px 0 0; }
 .service .service-item p { font-size: 16px; line-height: 1.75; margin-top: 16px; }
 .service .service-item .service-item__image { width: 72px; height: 72px; margin: 0; padding: 12px; border-radius: 12px; background: var(--surface); }
 .service-item__link { padding-top: 20px; font-size: 15px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }

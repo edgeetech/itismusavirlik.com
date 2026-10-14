@@ -42,14 +42,14 @@
   <p>Çalışma branch’ı: <code>codex/itis-ui-content-refresh</code>. Bu rapordaki yeni ekranlar yerel üretim çıktısının önizlemesidir; canlı yayına alınmış bir değişiklik değildir. Önceki ekranlar mevcut canlı siteden alındı.</p>
   <div class="metrics">
     <div class="metric"><strong>6 sayfa</strong><span>Türkçe ve İngilizce ana sayfa, hakkında, hizmetler</span></div>
-    <div class="metric"><strong>24 kontrol</strong><span>320 / 390 / 768 / 1024 px · yatay taşma yok</span></div>
+    <div class="metric"><strong>24 kontrol</strong><span>320 / 390 / 742 / 1280 px · yatay taşma yok</span></div>
     <div class="metric"><strong>7,07:1</strong><span>Ana gövde metni / beyaz zemin kontrastı</span></div>
   </div>
   <h2>Neyi, neden değiştirdik?</h2>
   <table>
     <thead><tr><th>Bulgu</th><th>Değişiklik</th><th>Gerekçe</th></tr></thead>
     <tbody>
-      <tr><td>İnce yazılar, küçük alt bilgi ve renk geçişli düğmeler okuma yükünü artırıyordu.</td><td>Sistem yazı tipi, 16–19 px gövde metni, koyu lacivert başlıklar, düz renk düğmeler, açık yüzeyler.</td><td>Metinleri daha rahat okumak ve önemli eylemleri ayırt etmek. Kullanılmayan Google Fonts istekleri kaldırıldı.</td></tr>
+      <tr><td>İnce yazılar, küçük alt bilgi ve renk geçişli düğmeler okuma yükünü artırıyordu. İlk önizlemedeki Arial, istenen zarif görünümü vermiyordu.</td><td>Yerel Inter Variable, optik boyutlandırma, 550 ağırlıklı ana başlık ve daha sıkı harf aralığı; 16–19 px gövde metni, lacivert başlıklar ve düz renk düğmeler.</td><td>Okunabilirliği korurken daha rafine bir tipografik kimlik oluşturmak. Font önceden yüklenir; Google Fonts isteği olmadan tüm cihazlara aynı dosya sunulur.</td></tr>
       <tr><td>390 px mobil ekranda sayfa genişliği 465 px’e taşıyordu.</td><td>Logonun yüzde 200 genişliği kaldırıldı; mobil boşluklar, kartlar ve uzun e-posta adresleri düzenlendi.</td><td>Yatay kaydırma olmadan okunabilir bir mobil görünüm sağlamak.</td></tr>
       <tr><td>Ana ekran ağırlıklı olarak firma adı ve şehir gösteriyordu.</td><td>Hizmeti açıklayan ana başlık, kısa tanıtım, “Bize Ulaşın” ve “Hizmetlerimiz” seçenekleri.</td><td>Ziyaretçinin ne sunulduğunu ve bir sonraki adımı ilk ekranda anlaması.</td></tr>
       <tr><td>Hizmet listeleri uzun, tekrarlı ve bazı ifadelerin mesleki kapsamı belirsizdi.</td><td>Dört kısa hizmet özeti, her hizmet için beş maddelik kapsam ve karttan ilgili detay bölümüne bağlantı.</td><td>Bilgiyi taranabilir kılmak. Tasdik, dava yürütme ve sonuç garantisi çağrıştıran ifadeleri daraltmak.</td></tr>
@@ -60,6 +60,7 @@
   </table>
   <p>İnceleme sonrası tercih: Footer’daki EdgeeTech hazırlayan bağlantısı ve çevresindeki metin önceki 9 px boyutunda korundu. Genel telif metni daha okunaklı boyutta kalıyor. Satırın paragraf genişliği sınırı kaldırılarak yaklaşık 742 px ekranda tek satır ve merkezde görünmesi doğrulandı; hazırlayan ifadesinin kendi içinde bölünmesi engellendi. <a href="screenshots/after-footer-credit.jpg">Güncel footer görüntüsü</a>.</p>
   <h2>İçerik yaklaşımı</h2>
+  <p>Tipografik seçim: <a href="https://rsms.me/inter/">Inter Variable</a>. Fontun resmi dağıtımındaki 4.1 dosyası yerel olarak barındırılır; SIL Open Font License metni repo içinde korunur. Türkçe karakterler ve gerçek font yüklenmesi tarayıcıda doğrulandı. SF Pro ve Segoe’nun modern arayüz çizgisine yakın bir görsel tercih olarak seçildi; bu firmaların kendi fontu olduğu iddia edilmiyor.</p>
   <p>Üstünlük, müşteri memnuniyeti ve vergi tasarrufu vaatleri yerine mesleki hizmetlerin kapsamı anlatıldı. İngilizce içerik aynı kapsamı izliyor; SGK gibi Türkiye’ye özgü terimler korundu. Ekibin mevcut isimleri, unvanları, biyografileri ve iletişim bilgileri değiştirilmedi. Tarih ve unvanlar mevcut repo içeriğine dayanıyor; bağımsız yeniden belgelendirme yapılmadı.</p>
   <p>İletişim metni kısaltıldı ve ilk görüşmede hangi bilgilerin paylaşılabileceği belirtildi. Yeni form veya belge yükleme alanı eklenmedi; hassas mali belgelerin ilk e-postada gönderilmemesi önerildi.</p>
   <p>Editoryal referans: <a href="https://www.turmob.org.tr/mevzuat/18/yonetmelikler">TÜRMOB’un yönetmelikler dizininde yer alan Haksız Rekabet ve Reklam Yasağı Yönetmeliği</a>. Bu çalışma metni bilgilendirici yönde sadeleştirir; kapsamlı bir mesleki mevzuat uygunluk incelemesi değildir.</p>
