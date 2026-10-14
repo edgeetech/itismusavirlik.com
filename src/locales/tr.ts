@@ -217,6 +217,7 @@ export const tr = {
     },
   },
   team: {
+    emailLabel: 'E-posta',
     aria: {
       linkedin: '{{name}} LinkedIn',
       facebook: '{{name}} Facebook',

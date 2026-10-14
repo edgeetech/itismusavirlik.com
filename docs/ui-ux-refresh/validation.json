@@ -5,6 +5,7 @@
   "lint": "passed",
   "build": "passed",
   "oneH1PerRoute": true,
+  "teamCards": {"date": "2026-10-15", "routes": ["/", "/about/", "/en/", "/en/about/"], "widths": [320, 390, 768, 1280], "samples": 16, "overflowOrBrokenPortraits": [], "homepageCardsAndEmailLinks": 3, "aboutPageCardsAndEmailLinks": 5},
   "correctLanguagePerRoute": true,
   "missingLocalAssetOrRouteReferences": [],
   "viewportWidths": [320, 390, 742, 1280],

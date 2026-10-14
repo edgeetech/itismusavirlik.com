@@ -7,6 +7,7 @@ export type TeamMember = {
   role: string
   bio: string
   image: string
+  imagePosition?: string
   email: string
   featured: boolean
   social?: {
@@ -19,12 +20,14 @@ const teamMeta = [
   {
     id: 'orhan-itisken',
     image: '/img/orhanItisken.jpg',
+    imagePosition: 'center top',
     email: 'orhan@itismusavirlik.com',
     featured: true,
   },
   {
     id: 'hasan-kemal-itisken',
     image: '/img/hasanKemal.jpg',
+    imagePosition: 'center top',
     email: 'hasankemal@itismusavirlik.com',
     featured: true,
     social: {

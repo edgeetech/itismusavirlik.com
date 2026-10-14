@@ -218,6 +218,7 @@ export const en = {
     },
   },
   team: {
+    emailLabel: 'Email',
     aria: {
       linkedin: '{{name}} LinkedIn',
       facebook: '{{name}} Facebook',
