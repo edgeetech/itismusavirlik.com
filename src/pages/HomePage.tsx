@@ -25,23 +25,6 @@ export function HomePage() {
   const servicesPath = getRoutePath('services', language)
   const homePath = getRoutePath('home', language)
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: site.legalName,
-    image: new URL(site.images.logo, `${site.url}/`).toString(),
-    url: site.url,
-    telephone: site.phoneNumbers[0],
-    email: site.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: site.city,
-      streetAddress: site.address,
-      addressCountry: 'TR',
-    },
-    sameAs: [site.social.facebook],
-  }
-
   return (
     <>
       <Seo
@@ -50,7 +33,6 @@ export function HomePage() {
         path={homePath}
         routeKey="home"
         image={site.images.hero}
-        schema={schema}
       />
 
       <div className="hero" id="home">

@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# Public content is accessible to search crawlers and user-requested agents.
+
 Sitemap: https://www.itismusavirlik.com/sitemap.xml

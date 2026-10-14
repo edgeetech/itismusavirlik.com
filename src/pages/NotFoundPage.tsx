@@ -15,6 +15,7 @@ export function NotFoundPage() {
         title={t('seo.notFound.title')}
         description={t('seo.notFound.description')}
         path={location.pathname}
+        noindex
       />
       <div className="not-found-page">
         <div className="container">

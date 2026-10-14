@@ -19,22 +19,6 @@ export function AboutPage() {
   const teamGridRef = useEqualHeightRows<HTMLDivElement>('.team-card')
   const aboutPath = getRoutePath('about', language)
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: site.legalName,
-    url: `${site.url}${aboutPath}`,
-    logo: new URL(site.images.logo, `${site.url}/`).toString(),
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      telephone: site.phoneNumbers[0],
-      email: site.email,
-      areaServed: 'TR',
-    },
-    sameAs: [site.social.facebook],
-  }
-
   return (
     <>
       <Seo
@@ -43,7 +27,6 @@ export function AboutPage() {
         path={aboutPath}
         routeKey="about"
         image={site.images.about}
-        schema={schema}
       />
 
       <div className="about content-offset-top">

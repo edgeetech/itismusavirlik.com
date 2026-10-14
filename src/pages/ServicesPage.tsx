@@ -19,11 +19,11 @@ export function ServicesPage() {
   const schema = services.map((service) => ({
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${site.url}${servicesPath}#${service.id}`,
+    url: `${site.url}${servicesPath}#${service.id}`,
     serviceType: service.title,
     provider: {
-      '@type': 'LocalBusiness',
-      name: site.legalName,
-      url: site.url,
+      '@id': `${site.url}/#business`,
     },
     areaServed: 'Ankara',
     description: service.shortDescription,
