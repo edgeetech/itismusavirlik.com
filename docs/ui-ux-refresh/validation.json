@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-14",
+  "environment": "Local production build served by Vite preview at 127.0.0.1:4173; not deployed",
+  "routes": ["/", "/about/", "/services/", "/en/", "/en/about/", "/en/services/"],
+  "lint": "passed",
+  "build": "passed",
+  "oneH1PerRoute": true,
+  "correctLanguagePerRoute": true,
+  "missingLocalAssetOrRouteReferences": [],
+  "viewportWidths": [320, 390, 768, 1024],
+  "responsiveSamples": 24,
+  "horizontalOverflowSamples": [],
+  "overflowMethod": "documentElement.scrollWidth compared with documentElement.clientWidth, excluding the vertical scrollbar",
+  "baseline390": {"windowWidth": 390, "documentScrollWidth": 465, "logoWidth": 450},
+  "keyboardSkipLink": {"hash": "#main-content", "focusedElementId": "main-content"},
+  "headerCurrentPage": "Exactly one matching header navigation link on each of six routes",
+  "manualInteractions": ["Mobile menu expansion and closure after navigation", "TR about to EN about", "TR and EN company formation detail anchors", "EN contact anchor", "Keyboard skip-to-content"],
+  "selectedContrastRatios": {"headingOnWhite": 14.36, "bodyOnWhite": 7.07, "accentOnSurface": 5.25, "button": 14.36, "footer": 11.33},
+  "existingDependencyAudit": {"high": 8, "moderate": 4, "low": 2, "critical": 0},
+  "limitations": ["Not a complete WCAG conformance audit", "No legal compliance certification", "No measured conversion improvement", "Third-party map service not covered by local asset validation"]
+}

@@ -57,14 +57,17 @@ export function HomePage() {
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-md-6">
-              <h2>{site.legalName}</h2>
-              <h2>
-                <span>{site.city.toUpperCase()}</span>
-              </h2>
-              <p>{t('home.hero.tagline')}</p>
-              <a className="btn" href="#services">
+              <p className="eyebrow">{t('home.hero.tagline')} · {site.city}</p>
+              <h1>{t('home.hero.title')}</h1>
+              <p className="hero-description">{t('home.hero.description')}</p>
+              <div className="hero-actions">
+              <a className="btn" href="#contact">
+                {t('common.actions.contactUs')}
+              </a>
+              <a className="btn btn-secondary" href="#services">
                 {t('common.actions.exploreServices')}
               </a>
+              </div>
             </div>
             <div className="col-md-6">
               <img src={withBasePath(site.images.hero)} alt={t('home.hero.imageAlt')} />
@@ -81,8 +84,8 @@ export function HomePage() {
             </div>
             <div className="col-md-6">
               <h2 className="section-title">{t('home.about.title')}</h2>
-              <p style={{ textAlign: 'justify' }}>{t('home.about.paragraphs.0')}</p>
-              <p style={{ textAlign: 'justify' }}>{t('home.about.paragraphs.1')}</p>
+              <p>{t('home.about.paragraphs.0')}</p>
+              <p>{t('home.about.paragraphs.1')}</p>
               <a className="btn" href={withBasePath(aboutPath)}>
                 {t('common.actions.learnMore')}
               </a>

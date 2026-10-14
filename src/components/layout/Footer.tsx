@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useSite } from '../../data/site'
 import {
   getHomeAnchorPath,
@@ -54,11 +54,11 @@ export function Footer() {
           <div className="col-md-3">
             <div className="footer-link">
               <h2>{t('common.footer.menuTitle')}</h2>
-              <NavLink to={getRoutePath('home', language)}>{t('common.nav.home')}</NavLink>
-              <NavLink to={getRoutePath('about', language)}>{t('common.nav.about')}</NavLink>
-              <NavLink to={getRoutePath('services', language)}>
+              <Link to={getRoutePath('home', language)}>{t('common.nav.home')}</Link>
+              <Link to={getRoutePath('about', language)}>{t('common.nav.about')}</Link>
+              <Link to={getRoutePath('services', language)}>
                 {t('common.nav.services')}
-              </NavLink>
+              </Link>
               <a href={teamHref}>{t('common.nav.team')}</a>
               <a href={contactHref}>{t('common.nav.contact')}</a>
             </div>

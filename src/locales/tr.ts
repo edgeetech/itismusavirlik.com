@@ -1,5 +1,6 @@
 export const tr = {
   common: {
+    skipToContent: 'İçeriğe geç',
     languages: {
       tr: 'TR',
       en: 'EN',
@@ -13,6 +14,7 @@ export const tr = {
       contact: 'İletişim',
     },
     actions: {
+      serviceDetails: 'Hizmet kapsamı',
       exploreServices: 'Hizmetlerimiz',
       learnMore: 'Detaylı Bilgi',
       allServices: 'Tüm Hizmetlerimiz',
@@ -74,54 +76,56 @@ export const tr = {
   },
   home: {
     hero: {
-      tagline: "Sizin ve Şirketiniz İçin 1983'ten Beri",
+      tagline: "1983'ten beri",
+      title: 'Muhasebe ve mali müşavirlik',
+      description: 'İTİS olarak Ankara’da işletmelerin muhasebe, vergi, şirket kuruluşu ve sosyal güvenlik süreçlerinde hizmet veriyoruz.',
       imageAlt: 'ITIS Muhasebe',
     },
     about: {
       title: 'Hakkımızda',
       imageAlt: 'Muhasebe',
       paragraphs: [
-        "Orhan İtişken tarafından 1983 yılında Ankara Ulus'da Sezen Muhasebe adıyla faaliyete başlayan firmamızda sizin ve işletmenizin tüm ihtiyaçları için var gücümüzle çalışıyoruz.",
-        'Muhasebe ve mali müşavirlik alanında 40 yılı aşkın tecrübemizle, müşterilerimize en kaliteli hizmeti sunmak için çalışıyoruz. Tecrübe ve dinamizmin bir arada olduğu güçlü bir ekibiz.',
+        'Orhan İtişken’in 1983 yılında Ankara Ulus’ta Sezen Muhasebe adıyla kurduğu ofisimiz, bugün İTİS adıyla Çankaya Mutlukent’te faaliyet gösteriyor.',
+        'SMMM’lerimiz ve muhasebe ekibimiz; mali kayıtların tutulması, beyannamelerin hazırlanması ve işletmelerin mali süreçlerinin takibi üzerinde çalışıyor.',
       ],
     },
     services: {
-      title: 'Neler Yapıyoruz',
-      description: 'Sunduğumuz hizmetlerin bazıları şunlardır',
+      title: 'Hizmet alanlarımız',
+      description: 'Muhasebe kayıtlarından şirket kuruluşuna, hizmetlerimizin kapsamını inceleyin.',
     },
     team: {
       title: 'Ekibimiz',
-      description: 'Tecrübe ve dinamizmin bir arada olduğu güçlü bir ekibiz',
+      description: 'Mali müşavirlerimiz ve muhasebe ekibimizle tanışın.',
     },
   },
   aboutPage: {
     title: 'Hakkımızda',
     imageAlt: 'Muhasebe',
     paragraphs: [
-      "Orhan İtişken tarafından 1983 yılında Ankara Ulus'da Sezen Muhasebe adıyla faaliyete başlayan firmamızda sizin ve işletmenizin tüm ihtiyaçları için var gücümüzle çalışıyoruz.",
-      'Muhasebe ve mali müşavirlik alanında 40 yılı aşkın tecrübemizle, müşterilerimize en kaliteli hizmeti sunmak için çalışıyoruz. Tecrübe ve dinamizmin bir arada olduğu güçlü bir ekibiz.',
-      "Firmamız, yıllar içinde Ankara'nın farklı bölgelerinde hizmet vermiş, 2020 yılında Çankaya Mutlukent'teki modern ofisimize taşınmıştır. Bu süreçte, sürekli gelişen mevzuata ayak uydurarak, müşterilerimize en güncel ve doğru hizmeti sunmayı ilke edindik.",
+        'İTİS’in temelleri, Orhan İtişken’in 1983 yılında Ankara Ulus’ta kurduğu Sezen Muhasebe ofisine dayanıyor. Kurucumuzun muhasebe sektöründeki çalışmaları 1977 yılında başladı.',
+        'Bugün SMMM’lerimiz ve muhasebe ekibimizle muhasebe, vergi danışmanlığı, şirket kuruluşu ve sosyal güvenlik alanlarında hizmet veriyoruz.',
+        '2020 yılında Çankaya Mutlukent’teki ofisimize taşındık. İşletmelerin mali kayıtlarını, beyanlarını ve ilgili mevzuat süreçlerini bu ofisten takip ediyoruz.',
     ],
     team: {
       title: 'Ekibimiz',
-      description: 'Tecrübe ve dinamizmin bir arada olduğu güçlü bir ekibiz',
+      description: 'Ekibimizin mesleki geçmişi ve görevleri.',
     },
   },
   servicesPage: {
-    title: 'Neler Yapıyoruz',
-    description: 'Sunduğumuz hizmetlerin detaylı bilgileri',
+    title: 'Hizmetlerimiz',
+    description: 'İşletmenizin faaliyetleri ve yükümlülükleri doğrultusunda değerlendirilecek dört hizmet alanı.',
     whyUs: {
-      title: 'Neden Bizi Seçmelisiniz?',
+      title: 'Çalışma yaklaşımımız',
       imageAlt: 'SMMM Tabela',
       items: [
         {
           id: 'experience',
-          label: '40+ Yıllık Tecrübe:',
+          label: 'Mesleki geçmiş:',
           text: '1983 yılından bu yana muhasebe ve mali müşavirlik alanında hizmet veriyoruz.',
         },
         {
           id: 'team',
-          label: 'Uzman Kadro:',
+          label: 'Mali müşavirlik ekibi:',
           text: '2 SMMM ve deneyimli personelimizle profesyonel hizmet sunuyoruz.',
         },
         {
@@ -131,13 +135,13 @@ export const tr = {
         },
         {
           id: 'custom',
-          label: 'Kişiye Özel Çözümler:',
-          text: 'Her müşterimizin ihtiyaçları farklıdır. Size özel çözümler üretiyor, işletmenizin büyümesine katkı sağlıyoruz.',
+          label: 'Hizmet kapsamı:',
+          text: 'İşletmenin faaliyet konusu, mevcut kayıtları ve yükümlülükleri birlikte değerlendirilir.',
         },
         {
           id: 'trust',
-          label: 'Güvenilir ve Sorumluluk Sahibi:',
-          text: 'İşinizi güvenle emanet edebileceğiniz, sorumluluklarını bilen bir ekibiz.',
+          label: 'İlk görüşme:',
+          text: 'İhtiyacınızı ve işletmenizin mevcut durumunu paylaşmak için telefon veya e-posta ile bize ulaşabilirsiniz.',
         },
       ],
     },
@@ -146,85 +150,68 @@ export const tr = {
     mapTitle: 'ITIS ofis konumu',
     title: 'Bize Ulaşın',
     description:
-      'Hizmetlerimiz veya herhangi başka bir konuda bize iletmek istediğiniz bir şey varsa aşağıdaki iletişim bilgilerinden bize ulaşabilirsiniz. Ayrıca aşağıdaki telefon numaralarından çalışma saatleri içerisinde doğrudan arayabilirsiniz. Size en kısa zamanda geri dönüş yapacağız.',
+      'Muhasebe, vergi, şirket kuruluşu veya SGK işlemleri hakkındaki hizmetlerimiz için telefon ya da e-posta ile ofisimize ulaşabilirsiniz.',
+    preparation: 'İlk görüşme için faaliyet konunuzu ve ihtiyaç duyduğunuz hizmeti belirtmeniz yeterli. Kimlik, bordro veya mali belge gibi hassas bilgileri ilk e-postanızda göndermeyin.',
   },
-  stats: {
-    items: {
-      experience: { value: '43', label: 'Yıllık Tecrübe' },
-      employees: { value: '9', label: 'Çalışan' },
-      sectors: { value: '46', label: 'Sektöre Hizmet' },
-      clients: { value: '200+', label: 'Mutlu Müşteri' },
-    },
-  },
+  practiceFacts: [
+    { value: '1983', label: 'Kuruluş yılı' },
+    { value: 'Ankara', label: 'Mutlukent · Çankaya' },
+    { value: 'SMMM', label: 'Muhasebe ve mali müşavirlik' },
+    { value: '4 alan', label: 'Hizmet kapsamı' },
+  ],
   services: {
     detailLead: '{{title}} hizmetlerimiz kapsamında aşağıdaki hizmetleri sunuyoruz:',
     items: {
       accounting: {
-        title: 'Muhasebe Mali Müşavirlik',
+        title: 'Muhasebe ve Mali Müşavirlik',
         shortDescription:
-          'Kanunen tutulması zorunlu defterlerin tutulması, vergi beyannameleri, mali tablolar ve daha fazlası...',
+          'Mali kayıtların tutulması, beyannamelerin hazırlanması ve mali tabloların düzenlenmesi.',
         imageAlt: 'Muhasebe ve finansal kayıt ikonu',
         details: [
-          'Kanunen tutulması zorunlu defterlerin tutulması',
-          'Vergi, SSK vb. yükümlülükler ile ilgili denetimlerin yapılması',
-          'Düzenlenecek sözleşmelerin gözden geçirilmesi',
-          'Kanuni tasdik zorunluluğunun yerine getirilmesi',
-          'Vergi idaresi ile ilgili sorunların çözümlenmesi',
-          'Muhasebenizin anahtar teslim olarak şirketiniz içinde veya dışında tutulması',
-          'Kurulacak şirketin faaliyetlerinin ve her bir ana faaliyet konusunun vergi karşısındaki konumunun belirlenmesi',
-          'Yararlanılabilecek yasal vergi avantajlarının belirlenmesi',
-          'Gelecek yıllarda şirket üzerindeki vergi yükünün hesaplanıp, vergi planlaması yapılması',
-          'Muhasebe sisteminin kurulması ve işlemlerin yürütülmesi',
-          'Yönetim raporlamaları ve diğer özel amaçlı finansal yönetim raporlamalarının hazırlanması',
-          'Firmaların tek düzen hesap planına uygun mali tablolarının hazırlanması',
-          'Vergi Beyannamelerinin Hazırlanması ve Kontrolü',
+          'Yasal defterler ve muhasebe kayıtlarının tutulması',
+          'Vergi beyannamelerinin hazırlanması ve kontrolü',
+          'Tek düzen hesap planına uygun mali tabloların hazırlanması',
+          'Muhasebe sisteminin kurulması ve kayıt süreçlerinin takibi',
+          'Yönetim ve finansal raporların hazırlanması',
         ],
       },
       'tax-advisory': {
         title: 'Vergi Danışmanlığı',
         shortDescription:
-          'Yasal yükümlülükler konusunda bilgilendirme, mevzuat danışmanlığı ve vergi optimizasyonu...',
+          'Vergi yükümlülüklerinin ve işletmenize ilişkin mevzuat konularının değerlendirilmesi.',
         imageAlt: 'Vergi hesaplama ve danışmanlık ikonu',
         details: [
-          'Mükelleflerimizi yasal yükümlülükleri konusunda bilgilendirmek',
-          'Kanunlar ve mevzuatla ilgili müşavirlik hizmetleri sunmak',
-          'Görüş bildirmek',
-          'Ortaya çıkabilecek sorunlara ilişkin önerilerde bulunmak',
-          'Vergi avantajlarının belirlenmesi ve uygulanması',
-          'Vergi planlaması ve optimizasyonu',
-          'Vergi denetimi öncesi hazırlık ve destek',
-          'Vergi uyuşmazlıklarında danışmanlık',
+          'Vergi yükümlülükleri ve mevzuat değişiklikleri hakkında bilgilendirme',
+          'Faaliyetlerin vergi uygulamaları açısından değerlendirilmesi',
+          'Mevzuat kapsamında vergi planlaması ve danışmanlık',
+          'Vergi incelemeleri öncesinde kayıt ve belge hazırlığına destek',
+          'Vergi idaresiyle ilgili mali konularda danışmanlık',
         ],
       },
       incorporation: {
-        title: 'Ana Sözleşme Hazırlanması ve Kuruluş İşlemleri',
+        title: 'Şirket Kuruluşu',
         shortDescription:
-          'Ana sözleşme hazırlanması, şirket kuruluş işlemleri, ticaret sicili kayıtları...',
+          'Şirket türünün değerlendirilmesinden sicil kayıtlarına, kuruluş sürecinin takibi.',
         imageAlt: 'Kuruluş işlemleri ve belge hazırlama ikonu',
         details: [
-          'Kurulacak şirketin faaliyetlerine ve statüsüne en uygun olan şirket türünün belirlenmesi',
-          'Anasözleşme hazırlanması',
-          'Kuruluş işlemlerinin yürütülüp, sonuçlandırılması',
-          'Ticaret Sicili ve Vergi Dairesi kayıt işlemleri',
-          'SGK işyeri bildirimi',
-          'Muhasebe sisteminin kurulması',
-          'Kurulacak şirketin faaliyetlerinin ve her bir ana faaliyet konusunun vergi karşısındaki konumunun belirlenmesi',
+          'Faaliyet ve ortaklık yapısına göre şirket türünün değerlendirilmesi',
+          'Ana sözleşmenin hazırlanması',
+          'Ticaret sicili ve vergi dairesi kayıt işlemlerinin takibi',
+          'SGK işyeri bildirimi süreçleri',
+          'Kuruluş sonrasında muhasebe sisteminin kurulması',
         ],
       },
       'social-security': {
-        title: 'Sosyal Güvenlik',
+        title: 'Sosyal Güvenlik ve SGK',
         shortDescription:
-          'SGK işlemleri, işe giriş-çıkış bildirimleri, prim hesaplamaları ve daha fazlası...',
+          'İşyeri ve çalışan bildirimleri ile prim ve sosyal güvenlik yükümlülüklerinin takibi.',
         imageAlt: 'SGK ve sosyal güvenlik koruma ikonu',
         details: [
-          'İşyeri bildirimi, sigortalı işe giriş ve işten çıkış',
-          'Prim oranları ve prime esas kazançların belirlenmesi',
-          'İş kazası ve meslek hastalığı olayları ve işveren sorumluluğu',
-          'İşyeri tehlike sınıf ve derecesinin (NACE) belirlenmesi ve değişikliklere ilişkin işlemler',
-          'İstirahatli sigortalılarla ilgili çalışmazlık bildirimi',
-          'Aylık prim ve hizmet belgelerinin türü, mahiyeti ve kanun numaralarının belirlenmesi',
-          'İdari para cezası uygulamaları, itirazlar ve kanun yollarına başvurma',
-          'Sosyal güvenlik incelemeleri ve dava süreçlerinin yürütülmesi',
+          'SGK işyeri, işe giriş ve işten çıkış bildirimleri',
+          'Prime esas kazanç ve prim hesaplamalarının takibi',
+          'Faaliyete uygun NACE kodu ve işyeri sınıfının değerlendirilmesi',
+          'İstirahat ve çalışmazlık bildirimlerinin takibi',
+          'Prim ve hizmet bildirimlerinin hazırlanması',
         ],
       },
     },
@@ -266,7 +253,7 @@ export const tr = {
   history: {
     sectionTitle: 'Şirket Geçmişi',
     sectionDescription:
-      "Köklerimiz ve bugünümüz, izlediğimiz bu yolun bazı önemli anları. 1977'den beri muhasebe ve mali müşavirlik sektöründe hizmet veriyoruz.",
+      'Kurucumuzun 1977’de başlayan mesleki geçmişinden 1983’teki kuruluşumuza ve bugünkü ofisimize uzanan yolculuk.',
     todayLabel: 'Bugün',
     foundationLabel: 'Kuruluş',
     launchTitle: "1983 yılında Ankara Ulus'da Sezen Muhasebe olarak kurulduk",

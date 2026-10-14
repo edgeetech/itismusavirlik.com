@@ -22,7 +22,8 @@ export function ContactSection() {
           </div>
           <div className="col-md-6">
             <h2 className="section-title">{t('contact.title')}</h2>
-            <p style={{ textAlign: 'justify' }}>{t('contact.description')}</p>
+            <p>{t('contact.description')}</p>
+            <p className="contact-note">{t('contact.preparation')}</p>
             <div className="contact-details">
               <p>
                 <i className="fa fa-map-marker-alt" />

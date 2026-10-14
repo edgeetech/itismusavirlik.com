@@ -53,10 +53,10 @@ export function AboutPage() {
               <img src={withBasePath(site.images.about)} alt={t('aboutPage.imageAlt')} />
             </div>
             <div className="col-md-6">
-              <h2 className="section-title">{t('aboutPage.title')}</h2>
-              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.0')}</p>
-              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.1')}</p>
-              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.2')}</p>
+              <h1 className="section-title">{t('aboutPage.title')}</h1>
+              <p>{t('aboutPage.paragraphs.0')}</p>
+              <p>{t('aboutPage.paragraphs.1')}</p>
+              <p>{t('aboutPage.paragraphs.2')}</p>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ export function TeamGrid({ members }: TeamGridProps) {
                 alt={member.name}
                 className="team-card__image"
               />
-              <h4>{member.name}</h4>
+              <h3>{member.name}</h3>
               <p className="team-card__role">{member.role}</p>
               <p>{member.bio}</p>
               {member.social ? (
