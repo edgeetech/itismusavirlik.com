@@ -6,6 +6,7 @@
   "build": "passed",
   "seo": {"command": "npm run verify:seo", "status": "passed", "staticRoutes": 6, "sitemapUrls": 6, "sitemapAlternates": 18, "structuredData": ["AccountingService", "WebSite", "WebPage", "BreadcrumbList", "Service"], "discoveryEndpoints": ["/robots.txt", "/sitemap.xml", "/llms.txt", "/404.html"], "analytics": "Umami deferred at user request; no tracker installed", "hosted404Status": "Requires post-merge verification on GitHub Pages"},
   "oneH1PerRoute": true,
+  "teamGridCorrection": {"widths": [320, 390, 742, 768, 980, 1280], "routes": ["/", "/about/", "/en/", "/en/about/"], "samples": 24, "unequalWidthsOrOverflow": [], "cardWidthsAt742": [679.2, 679.2, 679.2], "cardWidthsAt390": [327.2, 327.2, 327.2], "mobilePortraitFit": "contain"},
   "teamCards": {"date": "2026-10-15", "routes": ["/", "/about/", "/en/", "/en/about/"], "widths": [320, 390, 768, 1280], "samples": 16, "overflowOrBrokenPortraits": [], "homepageCardsAndEmailLinks": 3, "aboutPageCardsAndEmailLinks": 5},
   "correctLanguagePerRoute": true,
   "missingLocalAssetOrRouteReferences": [],

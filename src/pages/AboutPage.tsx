@@ -8,7 +8,6 @@ import { useSite } from '../data/site'
 import { useTeamMembers } from '../data/team'
 import { getRoutePath, useCurrentLanguage } from '../i18n/routing'
 import { useLocale } from '../i18n/useLocale'
-import { useEqualHeightRows } from '../hooks/useEqualHeightRows'
 import { withBasePath } from '../utils/paths'
 
 export function AboutPage() {
@@ -16,7 +15,6 @@ export function AboutPage() {
   const { t } = useLocale()
   const site = useSite()
   const teamMembers = useTeamMembers()
-  const teamGridRef = useEqualHeightRows<HTMLDivElement>('.team-card')
   const aboutPath = getRoutePath('about', language)
 
   return (
@@ -47,7 +45,7 @@ export function AboutPage() {
 
       <StatsStrip />
 
-      <div className="about" id="team" ref={teamGridRef}>
+      <div className="about" id="team">
         <div className="container-fluid">
           <SectionHeader
             centered

@@ -10,10 +10,10 @@ export function TeamGrid({ members }: TeamGridProps) {
   const { t } = useLocale()
 
   return (
-    <div className="row team-grid justify-content-start" style={{ marginTop: '40px' }}>
+    <div className="team-grid">
       {members.map((member) => {
         return (
-          <div key={member.id} className="col-lg-4 col-md-6 d-flex team-grid__col">
+          <div key={member.id} className="team-grid__col">
             <article className="team-card h-100 w-100">
               <div className="team-card__portrait">
               <img
