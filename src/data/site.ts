@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { useLocale } from '../i18n/useLocale'
 
 const siteConfig = {
-  url: 'https://itismusavirlik.com',
+  url: 'https://www.itismusavirlik.com',
   phoneNumbers: ['(0312) 431 75 66', '(0312) 431 89 74'],
   email: 'info@itismusavirlik.com',
   foundedYear: '1983',
