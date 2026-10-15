@@ -19,15 +19,15 @@ export type TeamMember = {
 const teamMeta = [
   {
     id: 'orhan-itisken',
-    image: '/img/orhanItisken.jpg',
+    image: '/img/orhan.png',
     imagePosition: 'center top',
     email: 'orhan@itismusavirlik.com',
     featured: true,
   },
   {
     id: 'hasan-kemal-itisken',
-    image: '/img/hasanKemal.jpg',
-    imagePosition: 'center top',
+    image: '/img/hasanKemal.png',
+    imagePosition: 'center 12%',
     email: 'hasankemal@itismusavirlik.com',
     featured: true,
     social: {
@@ -37,7 +37,8 @@ const teamMeta = [
   },
   {
     id: 'mehmet-bersan-itisken',
-    image: '/img/bersanTest.png',
+    image: '/img/bersan.png',
+    imagePosition: 'center top',
     email: 'bersan@itismusavirlik.com',
     featured: true,
   },
