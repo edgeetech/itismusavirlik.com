@@ -1,6 +1,6 @@
 type SectionHeaderProps = {
   title: string
-  description: string
+  description?: string
   centered?: boolean
   as?: 'h1' | 'h2'
 }
@@ -14,7 +14,7 @@ export function SectionHeader({
   return (
     <div className={`section-header${centered ? ' text-center' : ''}`}>
       <Heading>{title}</Heading>
-      <p>{description}</p>
+      {description ? <p>{description}</p> : null}
     </div>
   )
 }

@@ -10,7 +10,7 @@ export const en = {
       home: 'Home',
       about: 'About',
       services: 'Services',
-      team: 'Team',
+      team: 'Management',
       contact: 'Contact',
     },
     actions: {
@@ -79,14 +79,14 @@ export const en = {
     hero: {
       tagline: 'Since 1983',
       title: 'Accounting and tax advisory',
-      description: 'Based in Ankara, İTİS provides accounting, tax advisory, company formation and social security services for businesses.',
+      description: 'Based in Ankara, ITIS provides accounting, tax advisory, company formation and social security services for businesses.',
       imageAlt: 'ITIS Accounting',
     },
     about: {
       title: 'About Us',
       imageAlt: 'Accounting',
       paragraphs: [
-        'Orhan İtişken founded our practice as Sezen Muhasebe in Ankara Ulus in 1983. Today, we operate as İTİS from our office in Mutlukent, Çankaya.',
+        'Orhan İtişken founded our practice as Sezen Muhasebe in Ankara Ulus in 1983. Today, we operate as ITIS from our office in Mutlukent, Çankaya.',
         'Our certified public accountants and accounting team work on maintaining financial records, preparing returns and following business accounting processes.',
       ],
     },
@@ -95,21 +95,19 @@ export const en = {
       description: 'Explore our services, from accounting records to company formation.',
     },
     team: {
-      title: 'Our Team',
-      description: 'Meet our certified public accountants and accounting team.',
+      title: 'Management',
     },
   },
   aboutPage: {
     title: 'About Us',
     imageAlt: 'Accounting',
     paragraphs: [
-      'İTİS began as Sezen Muhasebe, founded by Orhan İtişken in Ankara Ulus in 1983. Our founder started working in accounting in 1977.',
+      'ITIS began as Sezen Muhasebe, founded by Orhan İtişken in Ankara Ulus in 1983. Our founder started working in accounting in 1977.',
       'Today, our certified public accountants and accounting team provide accounting, tax advisory, company formation and social security services.',
       'We moved to our office in Mutlukent, Çankaya in 2020. From here, we follow financial records, returns and related regulatory processes for businesses.',
     ],
     team: {
-      title: 'Our Team',
-      description: 'Our team’s professional backgrounds and roles.',
+      title: 'Management',
     },
   },
   servicesPage: {

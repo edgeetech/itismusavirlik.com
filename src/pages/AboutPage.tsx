@@ -50,7 +50,6 @@ export function AboutPage() {
           <SectionHeader
             centered
             title={t('aboutPage.team.title')}
-            description={t('aboutPage.team.description')}
           />
           <TeamGrid members={teamMembers} />
         </div>

@@ -10,7 +10,7 @@ export const tr = {
       home: 'Anasayfa',
       about: 'Hakkımızda',
       services: 'Hizmetlerimiz',
-      team: 'Ekibimiz',
+      team: 'Yönetim',
       contact: 'İletişim',
     },
     actions: {
@@ -77,15 +77,15 @@ export const tr = {
   home: {
     hero: {
       tagline: "1983'ten beri",
-      title: 'Muhasebe ve mali müşavirlik',
-      description: 'İTİS olarak Ankara’da işletmelerin muhasebe, vergi, şirket kuruluşu ve sosyal güvenlik süreçlerinde hizmet veriyoruz.',
+      title: 'Muhasebe ve Mali Müşavirlik',
+      description: 'ITIS olarak Ankara’da işletmelerin muhasebe, vergi, şirket kuruluşu ve sosyal güvenlik süreçlerinde hizmet veriyoruz.',
       imageAlt: 'ITIS Muhasebe',
     },
     about: {
       title: 'Hakkımızda',
       imageAlt: 'Muhasebe',
       paragraphs: [
-        'Orhan İtişken’in 1983 yılında Ankara Ulus’ta Sezen Muhasebe adıyla kurduğu ofisimiz, bugün İTİS adıyla Çankaya Mutlukent’te faaliyet gösteriyor.',
+        'Orhan İtişken’in 1983 yılında Ankara Ulus’ta Sezen Muhasebe adıyla kurduğu ofisimiz, bugün ITIS adıyla Çankaya Mutlukent’te faaliyet gösteriyor.',
         'SMMM’lerimiz ve muhasebe ekibimiz; mali kayıtların tutulması, beyannamelerin hazırlanması ve işletmelerin mali süreçlerinin takibi üzerinde çalışıyor.',
       ],
     },
@@ -94,21 +94,19 @@ export const tr = {
       description: 'Muhasebe kayıtlarından şirket kuruluşuna, hizmetlerimizin kapsamını inceleyin.',
     },
     team: {
-      title: 'Ekibimiz',
-      description: 'Mali müşavirlerimiz ve muhasebe ekibimizle tanışın.',
+      title: 'Yönetim',
     },
   },
   aboutPage: {
     title: 'Hakkımızda',
     imageAlt: 'Muhasebe',
     paragraphs: [
-        'İTİS’in temelleri, Orhan İtişken’in 1983 yılında Ankara Ulus’ta kurduğu Sezen Muhasebe ofisine dayanıyor. Kurucumuzun muhasebe sektöründeki çalışmaları 1977 yılında başladı.',
+        'ITIS’in temelleri, Orhan İtişken’in 1983 yılında Ankara Ulus’ta kurduğu Sezen Muhasebe ofisine dayanıyor. Kurucumuzun muhasebe sektöründeki çalışmaları 1977 yılında başladı.',
         'Bugün SMMM’lerimiz ve muhasebe ekibimizle muhasebe, vergi danışmanlığı, şirket kuruluşu ve sosyal güvenlik alanlarında hizmet veriyoruz.',
         '2020 yılında Çankaya Mutlukent’teki ofisimize taşındık. İşletmelerin mali kayıtlarını, beyanlarını ve ilgili mevzuat süreçlerini bu ofisten takip ediyoruz.',
     ],
     team: {
-      title: 'Ekibimiz',
-      description: 'Ekibimizin mesleki geçmişi ve görevleri.',
+      title: 'Yönetim',
     },
   },
   servicesPage: {

@@ -41,7 +41,7 @@ export function Seo({ title, description, path, routeKey, keywords, image, schem
     '@graph': [
       {
         '@type': 'AccountingService', '@id': businessId,
-        name: 'İTİS Muhasebe ve Mali Müşavirlik', url: `${site.url}/`,
+        name: 'ITIS Muhasebe ve Mali Müşavirlik', url: `${site.url}/`,
         description: site.description, foundingDate: site.foundedYear,
         telephone: '+90' + site.phoneNumbers[0].replace(/\D/g, '').replace(/^0/, ''),
         email: site.email, logo: new URL(site.images.logo, `${site.url}/`).toString(),
@@ -49,7 +49,7 @@ export function Seo({ title, description, path, routeKey, keywords, image, schem
         address: { '@type': 'PostalAddress', streetAddress: site.address, addressLocality: site.city, addressCountry: 'TR' },
         areaServed: site.city, sameAs: [site.social.facebook],
       },
-      { '@type': 'WebSite', '@id': websiteId, url: `${site.url}/`, name: 'İTİS', inLanguage: ['tr', 'en'], publisher: { '@id': businessId } },
+      { '@type': 'WebSite', '@id': websiteId, url: `${site.url}/`, name: 'ITIS', inLanguage: ['tr', 'en'], publisher: { '@id': businessId } },
       {
         '@type': 'WebPage', '@id': `${canonicalUrl}#webpage`, url: canonicalUrl,
         name: title, description, inLanguage: language, isPartOf: { '@id': websiteId },

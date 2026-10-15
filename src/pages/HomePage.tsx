@@ -106,7 +106,6 @@ export function HomePage() {
           <SectionHeader
             centered
             title={t('home.team.title')}
-            description={t('home.team.description')}
           />
           <TeamGrid members={featuredMembers} />
         </div>
