@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useSite } from '../../data/site'
 import {
   getHomeAnchorPath,
@@ -53,13 +53,13 @@ export function Header() {
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-lg-2">
-              <NavLink
+              <Link
                 to={getRoutePath('home', language)}
                 onClick={closeMenu}
-                aria-label={t('header.logoAriaLabel')}
+                className="header__brand" aria-label={t('header.logoAriaLabel')}
               >
                 <img src={withBasePath(site.images.logo)} alt="ITIS Logo" />
-              </NavLink>
+              </Link>
           </div>
           <div className="col-lg-10">
             <div className="topbar">
@@ -102,6 +102,7 @@ export function Header() {
                       }`}
                       onClick={closeMenu}
                       hrefLang={targetLanguage}
+                      aria-current={language === targetLanguage ? 'true' : undefined}
                       lang={targetLanguage}
                     >
                       {t(`common.languages.${targetLanguage}`)}
@@ -135,14 +136,14 @@ export function Header() {
                 <ul className="nav navbar-nav navbar-right">
                   {navItems.map((item) => (
                     <li key={item.to}>
-                      <NavLink
+                      <Link
                         to={item.to}
-                        end={item.to === '/'}
-                        className={({ isActive }) => (isActive ? 'active' : undefined)}
+                        aria-current={normalizePath(location.pathname) === item.to ? 'page' : undefined}
+                        className={normalizePath(location.pathname) === item.to ? 'active' : undefined}
                         onClick={closeMenu}
                       >
                         {item.label}
-                      </NavLink>
+                      </Link>
                     </li>
                   ))}
                   <li>

@@ -1,24 +1,18 @@
-import { useStats } from '../../data/stats'
+import { useLocale } from '../../i18n/useLocale'
 
 export function StatsStrip() {
-  const stats = useStats()
+  const { t } = useLocale()
+  // Stable facts replace client, sector and headcount claims without a source/date.
+  const facts = t('practiceFacts', { returnObjects: true }) as Array<{ value: string; label: string }>
 
   return (
-    <div className="service stats-strip">
+    <div className="practice-facts">
       <div className="container-fluid">
-        <div className="row text-center">
-          {stats.map((stat) => (
-            <div key={stat.label} className="col-md-3 col-sm-6">
-              <div className="stats-strip__item">
-                <div className="stats-strip__icon">
-                  <i className={`fa ${stat.icon}`} />
-                </div>
-                <h3 className="stats-strip__value">{stat.value}</h3>
-                <p className="stats-strip__label">{stat.label}</p>
-              </div>
-            </div>
+        <dl className="practice-facts__grid">
+          {facts.map(({ value, label }) => (
+            <div key={label}><dt>{label}</dt><dd>{value}</dd></div>
           ))}
-        </div>
+        </dl>
       </div>
     </div>
   )

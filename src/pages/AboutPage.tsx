@@ -8,7 +8,6 @@ import { useSite } from '../data/site'
 import { useTeamMembers } from '../data/team'
 import { getRoutePath, useCurrentLanguage } from '../i18n/routing'
 import { useLocale } from '../i18n/useLocale'
-import { useEqualHeightRows } from '../hooks/useEqualHeightRows'
 import { withBasePath } from '../utils/paths'
 
 export function AboutPage() {
@@ -16,24 +15,7 @@ export function AboutPage() {
   const { t } = useLocale()
   const site = useSite()
   const teamMembers = useTeamMembers()
-  const teamGridRef = useEqualHeightRows<HTMLDivElement>('.team-card')
   const aboutPath = getRoutePath('about', language)
-
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: site.legalName,
-    url: `${site.url}${aboutPath}`,
-    logo: new URL(site.images.logo, `${site.url}/`).toString(),
-    contactPoint: {
-      '@type': 'ContactPoint',
-      contactType: 'customer service',
-      telephone: site.phoneNumbers[0],
-      email: site.email,
-      areaServed: 'TR',
-    },
-    sameAs: [site.social.facebook],
-  }
 
   return (
     <>
@@ -43,7 +25,6 @@ export function AboutPage() {
         path={aboutPath}
         routeKey="about"
         image={site.images.about}
-        schema={schema}
       />
 
       <div className="about content-offset-top">
@@ -53,10 +34,10 @@ export function AboutPage() {
               <img src={withBasePath(site.images.about)} alt={t('aboutPage.imageAlt')} />
             </div>
             <div className="col-md-6">
-              <h2 className="section-title">{t('aboutPage.title')}</h2>
-              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.0')}</p>
-              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.1')}</p>
-              <p style={{ textAlign: 'justify' }}>{t('aboutPage.paragraphs.2')}</p>
+              <h1 className="section-title">{t('aboutPage.title')}</h1>
+              <p>{t('aboutPage.paragraphs.0')}</p>
+              <p>{t('aboutPage.paragraphs.1')}</p>
+              <p>{t('aboutPage.paragraphs.2')}</p>
             </div>
           </div>
         </div>
@@ -64,7 +45,7 @@ export function AboutPage() {
 
       <StatsStrip />
 
-      <div className="about" id="team" ref={teamGridRef}>
+      <div className="about" id="team">
         <div className="container-fluid">
           <SectionHeader
             centered

@@ -1,5 +1,6 @@
 export const en = {
   common: {
+    skipToContent: 'Skip to content',
     languages: {
       tr: 'TR',
       en: 'EN',
@@ -13,6 +14,7 @@ export const en = {
       contact: 'Contact',
     },
     actions: {
+      serviceDetails: 'Service scope',
       exploreServices: 'Our Services',
       learnMore: 'Learn More',
       allServices: 'All Services',
@@ -75,54 +77,56 @@ export const en = {
   },
   home: {
     hero: {
-      tagline: 'Supporting You and Your Company Since 1983',
+      tagline: 'Since 1983',
+      title: 'Accounting and tax advisory',
+      description: 'Based in Ankara, İTİS provides accounting, tax advisory, company formation and social security services for businesses.',
       imageAlt: 'ITIS Accounting',
     },
     about: {
       title: 'About Us',
       imageAlt: 'Accounting',
       paragraphs: [
-        'Founded in 1983 in Ankara Ulus under the name Sezen Muhasebe by Orhan İtişken, our firm works with full commitment to meet the needs of you and your business.',
-        'With more than forty years of experience in accounting and certified public accountancy, we focus on delivering the highest quality service to our clients. We are a strong team that brings experience and dynamism together.',
+        'Orhan İtişken founded our practice as Sezen Muhasebe in Ankara Ulus in 1983. Today, we operate as İTİS from our office in Mutlukent, Çankaya.',
+        'Our certified public accountants and accounting team work on maintaining financial records, preparing returns and following business accounting processes.',
       ],
     },
     services: {
-      title: 'What We Do',
-      description: 'Some of the services we provide are listed below',
+      title: 'Our service areas',
+      description: 'Explore our services, from accounting records to company formation.',
     },
     team: {
       title: 'Our Team',
-      description: 'A strong team where experience and dynamism come together',
+      description: 'Meet our certified public accountants and accounting team.',
     },
   },
   aboutPage: {
     title: 'About Us',
     imageAlt: 'Accounting',
     paragraphs: [
-      'Founded in 1983 in Ankara Ulus under the name Sezen Muhasebe by Orhan İtişken, our firm works with full commitment to meet the needs of you and your business.',
-      'With more than forty years of experience in accounting and certified public accountancy, we focus on delivering the highest quality service to our clients. We are a strong team that brings experience and dynamism together.',
-      "Over the years, our firm has served clients from different parts of Ankara and moved to our modern office in Çankaya Mutlukent in 2020. Throughout this journey, we have adapted to changing legislation and made it a principle to provide our clients with accurate and up-to-date service.",
+      'İTİS began as Sezen Muhasebe, founded by Orhan İtişken in Ankara Ulus in 1983. Our founder started working in accounting in 1977.',
+      'Today, our certified public accountants and accounting team provide accounting, tax advisory, company formation and social security services.',
+      'We moved to our office in Mutlukent, Çankaya in 2020. From here, we follow financial records, returns and related regulatory processes for businesses.',
     ],
     team: {
       title: 'Our Team',
-      description: 'A strong team where experience and dynamism come together',
+      description: 'Our team’s professional backgrounds and roles.',
     },
   },
   servicesPage: {
-    title: 'What We Do',
-    description: 'Detailed information about the services we provide',
+    title: 'Our services',
+    description: 'Four service areas to consider in relation to your business activities and obligations in Türkiye.',
     whyUs: {
-      title: 'Why Choose Us?',
+      title: 'Our approach',
       imageAlt: 'Certified public accountancy sign',
       items: [
         {
           id: 'experience',
-          label: '40+ Years of Experience:',
+          label: 'Professional background:',
           text: 'We have been providing accounting and certified public accountancy services since 1983.',
         },
         {
           id: 'team',
-          label: 'Expert Team:',
+          label: 'Accountancy team:',
           text: 'We provide professional service with 2 certified public accountants and experienced staff.',
         },
         {
@@ -132,13 +136,13 @@ export const en = {
         },
         {
           id: 'custom',
-          label: 'Tailored Solutions:',
-          text: 'Every client has different needs. We develop solutions tailored to your business and support your growth.',
+          label: 'Service scope:',
+          text: 'The business activity, existing records and obligations are considered together.',
         },
         {
           id: 'trust',
-          label: 'Reliable and Responsible:',
-          text: 'We are a team you can trust with your business, fully aware of our responsibilities.',
+          label: 'Initial conversation:',
+          text: 'Contact us by phone or email to describe your needs and your business’s current situation.',
         },
       ],
     },
@@ -147,90 +151,74 @@ export const en = {
     mapTitle: 'ITIS office location',
     title: 'Contact Us',
     description:
-      'If you would like to reach us about our services or any other matter, you can use the contact details below. You may also call us directly during business hours using the phone numbers listed below. We will get back to you as soon as possible.',
+      'Contact our office by phone or email about our accounting, tax advisory, company formation or SGK services.',
+    preparation: 'For an initial conversation, tell us your business activity and the service you need. Please do not send sensitive identity, payroll or financial documents in your first email.',
   },
-  stats: {
-    items: {
-      experience: { value: '43', label: 'Years of Experience' },
-      employees: { value: '9', label: 'Employees' },
-      sectors: { value: '46', label: 'Sectors Served' },
-      clients: { value: '200+', label: 'Happy Clients' },
-    },
-  },
+  practiceFacts: [
+    { value: '1983', label: 'Established' },
+    { value: 'Ankara', label: 'Mutlukent · Çankaya' },
+    { value: 'SMMM', label: 'Certified public accountancy' },
+    { value: '4 areas', label: 'Service scope' },
+  ],
   services: {
     detailLead: 'Within our {{title}} services, we provide the following support:',
     items: {
       accounting: {
         title: 'Accounting & Certified Public Accountancy',
         shortDescription:
-          'Statutory bookkeeping, tax returns, financial statements, and more...',
+          'Maintaining financial records, preparing tax returns and producing financial statements.',
         imageAlt: 'Accounting and financial records icon',
         details: [
-          'Maintaining statutory books and records required by law',
-          'Reviewing tax, social security and similar compliance obligations',
-          'Reviewing contracts to be issued',
-          'Ensuring mandatory legal certification requirements are fulfilled',
-          'Resolving matters related to the tax administration',
-          'Managing your accounting on a turnkey basis within or outside your company',
-          'Assessing the tax position of the company to be established and each core business activity',
-          'Identifying applicable tax advantages allowed by law',
-          'Calculating future tax burden and carrying out tax planning',
-          'Establishing the accounting system and running accounting processes',
-          'Preparing management reporting and other special-purpose financial reports',
-          'Preparing financial statements in line with the uniform chart of accounts',
+          'Maintaining statutory books and accounting records',
           'Preparing and reviewing tax returns',
+          'Preparing financial statements under the uniform chart of accounts',
+          'Establishing accounting systems and following record-keeping processes',
+          'Preparing management and financial reports',
         ],
       },
       'tax-advisory': {
         title: 'Tax Advisory',
         shortDescription:
-          'Guidance on legal obligations, regulatory advisory, and tax optimisation...',
+          'Reviewing tax obligations and regulatory matters related to your business.',
         imageAlt: 'Tax calculation and advisory icon',
         details: [
-          'Informing taxpayers about their legal obligations',
-          'Providing advisory services on laws and regulations',
-          'Issuing professional opinions',
-          'Offering recommendations for potential issues',
-          'Identifying and applying tax advantages',
-          'Tax planning and optimisation',
-          'Preparation and support before tax inspections',
-          'Advisory support in tax disputes',
+          'Guidance on tax obligations and regulatory changes',
+          'Reviewing the tax treatment of business activities',
+          'Tax planning and advisory within the applicable legislation',
+          'Support with records and documents before tax inspections',
+          'Advisory on financial matters involving the tax administration',
         ],
       },
       incorporation: {
-        title: 'Company Formation & Articles of Association',
+        title: 'Company Formation',
         shortDescription:
-          'Drafting articles of association, company formation procedures, and trade registry filings...',
+          'Following the formation process, from reviewing the company structure to registry filings.',
         imageAlt: 'Company formation and document preparation icon',
         details: [
-          'Determining the most suitable company type for the planned activities and structure',
+          'Reviewing the company type for the activity and ownership structure',
           'Drafting the articles of association',
-          'Handling and finalising company formation procedures',
-          'Managing Trade Registry and Tax Office registration processes',
-          'Social Security workplace registration',
-          'Establishing the accounting system',
-          'Assessing the tax position of the company to be established and each core business activity',
+          'Following Trade Registry and Tax Office registration procedures',
+          'SGK workplace registration procedures',
+          'Establishing the accounting system after formation',
         ],
       },
       'social-security': {
         title: 'Social Security (SGK)',
         shortDescription:
-          'SGK procedures, employment entry and exit notifications, premium calculations, and more...',
+          'Following workplace and employee notifications, premiums and social security obligations.',
         imageAlt: 'SGK and social security protection icon',
         details: [
-          'Workplace registration, employee entry and exit notifications',
-          'Determining premium rates and the premium-based earnings base',
-          'Occupational accidents, occupational diseases, and employer liability',
-          'Determining and updating workplace hazard class and level (NACE)',
-          'Reporting incapacity notifications for insured employees on sick leave',
-          'Determining the type, nature and law numbers of monthly premium and service declarations',
-          'Administrative fines, objections and legal remedies',
-          'Managing social security inspections and litigation processes',
+          'SGK workplace, employment entry and exit notifications',
+          'Following premium-based earnings and premium calculations',
+          'Reviewing the NACE code and workplace classification for the activity',
+          'Following sick leave and incapacity notifications',
+          'Preparing premium and service declarations',
         ],
       },
     },
   },
   team: {
+    emailLabel: 'Email',
     aria: {
       linkedin: '{{name}} LinkedIn',
       facebook: '{{name}} Facebook',
@@ -267,7 +255,7 @@ export const en = {
   history: {
     sectionTitle: 'Company History',
     sectionDescription:
-      "Our roots and our present, along with some key milestones on the path we have followed. We have been serving the accounting and certified public accountancy sector since 1977.",
+      'From our founder’s career in 1977 to the establishment of our practice in 1983 and our current office.',
     todayLabel: 'Today',
     foundationLabel: 'Foundation',
     launchTitle: "We were founded in 1983 in Ankara Ulus as Sezen Muhasebe",

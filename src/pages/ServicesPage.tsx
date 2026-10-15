@@ -19,11 +19,11 @@ export function ServicesPage() {
   const schema = services.map((service) => ({
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${site.url}${servicesPath}#${service.id}`,
+    url: `${site.url}${servicesPath}#${service.id}`,
     serviceType: service.title,
     provider: {
-      '@type': 'LocalBusiness',
-      name: site.legalName,
-      url: site.url,
+      '@id': `${site.url}/#business`,
     },
     areaServed: 'Ankara',
     description: service.shortDescription,
@@ -43,6 +43,7 @@ export function ServicesPage() {
       <div ref={servicesRef} className="service content-offset-top">
         <div className="container-fluid">
           <SectionHeader
+            as="h1"
             title={t('servicesPage.title')}
             description={t('servicesPage.description')}
           />
@@ -78,10 +79,7 @@ export function ServicesPage() {
               }>).map((item, index) => (
                 <p
                   key={item.id}
-                  style={{
-                    textAlign: 'justify',
-                    marginBottom: index === 4 ? undefined : '15px',
-                  }}
+                  style={{ marginBottom: index === 4 ? undefined : '15px' }}
                 >
                   <strong>{item.label}</strong> {item.text}
                 </p>

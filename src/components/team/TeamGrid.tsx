@@ -10,19 +10,29 @@ export function TeamGrid({ members }: TeamGridProps) {
   const { t } = useLocale()
 
   return (
-    <div className="row team-grid justify-content-start" style={{ marginTop: '40px' }}>
+    <div className="team-grid">
       {members.map((member) => {
         return (
-          <div key={member.id} className="col-lg-4 col-md-6 d-flex team-grid__col">
-            <div className="team-card h-100 w-100">
+          <div key={member.id} className="team-grid__col">
+            <article className="team-card h-100 w-100">
+              <div className="team-card__portrait">
               <img
                 src={withBasePath(member.image)}
                 alt={member.name}
                 className="team-card__image"
+                style={{ objectPosition: member.imagePosition }}
               />
-              <h4>{member.name}</h4>
+              </div>
+              <div className="team-card__content">
+              <h3>{member.name}</h3>
               <p className="team-card__role">{member.role}</p>
-              <p>{member.bio}</p>
+              <p className="team-card__bio">{member.bio}</p>
+              </div>
+              <div className="team-card__contact">
+                <a className="team-card__email" href={`mailto:${member.email}`} aria-label={t('team.aria.email', { name: member.name })}>
+                  <i className="fa fa-envelope" aria-hidden="true" /> {t('team.emailLabel')}
+                  <span aria-hidden="true">↗</span>
+                </a>
               {member.social ? (
                 <div className="team-social-links">
                   {member.social.linkedin ? (
@@ -45,19 +55,10 @@ export function TeamGrid({ members }: TeamGridProps) {
                       <i className="fab fa-facebook" />
                     </a>
                   ) : null}
-                  <a
-                    href={`mailto:${member.email}`}
-                    aria-label={t('team.aria.email', { name: member.name })}
-                  >
-                    <i className="fa fa-envelope" />
-                  </a>
                 </div>
-              ) : (
-                <a href={`mailto:${member.email}`}>
-                  <i className="fa fa-envelope" /> {member.email}
-                </a>
-              )}
-            </div>
+              ) : null}
+              </div>
+            </article>
           </div>
         )
       })}

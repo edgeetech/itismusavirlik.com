@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İTİS · UI/UX ve İçerik İyileştirmesi — Yönetici Özeti</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f6f7; color: #112c42; font: 17px/1.7 Arial, sans-serif; }
+    main { max-width: 1080px; margin: 40px auto; background: white; padding: 56px; border: 1px solid #dbe3e7; }
+    h1 { font-size: 38px; line-height: 1.2; margin: 12px 0 24px; }
+    h2 { margin-top: 40px; font-size: 25px; }
+    h3 { font-size: 19px; }
+    p { color: #465b6b; }
+    a { color: #17537b; }
+    .eyebrow { font-size: 13px; letter-spacing: .12em; color: #776441; font-weight: bold; }
+    .lead { font-size: 21px; }
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 30px 0; }
+    .metric { padding: 20px; border: 1px solid #dbe3e7; border-radius: 8px; }
+    .metric strong { display: block; font-size: 28px; }
+    .metric span { font-size: 14px; color: #465b6b; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { padding: 16px 12px; text-align: left; vertical-align: top; border-bottom: 1px solid #dbe3e7; }
+    th { background: #f3f6f7; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; border: 1px solid #dbe3e7; border-radius: 8px; }
+    .compare img { height: 310px; object-fit: cover; object-position: top; }
+    figcaption { font-size: 14px; padding: 10px 0; color: #465b6b; }
+    .mobile img { max-width: 260px; margin: auto; height: 500px; }
+    .note { padding: 20px; border-left: 3px solid #776441; background: #f3f6f7; }
+    code { font-size: 14px; overflow-wrap: anywhere; }
+    @media(max-width:700px) { main { margin: 0; padding: 24px; } h1 { font-size: 30px; } .metrics, .compare { grid-template-columns: 1fr; } table { font-size: 14px; } th, td { padding: 12px 6px; } }
+    @media print { body { background: white; } main { margin: 0; padding: 0; border: 0; } figure, tr, .metric { break-inside: avoid; } a { color: inherit; } }
+  </style>
+</head>
+<body><main>
+  <p class="eyebrow">İTİS · YÖNETİCİ ÖZETİ · 14 EKİM 2026</p>
+  <h1>Daha okunaklı bir site.<br>Daha açık bir hizmet anlatımı.</h1>
+  <p class="lead">İTİS’in mevcut kimliği, fotoğrafları ve hizmet alanları korunarak Türkçe ve İngilizce sayfalar yenilendi. Çalışmanın odağı; ziyaretçinin hizmet kapsamını anlaması, ekibi tanıması ve iletişim bilgilerine kolay ulaşması.</p>
+  <p>Çalışma branch’ı: <code>codex/itis-ui-content-refresh</code>. Bu rapordaki yeni ekranlar yerel üretim çıktısının önizlemesidir; canlı yayına alınmış bir değişiklik değildir. Önceki ekranlar mevcut canlı siteden alındı.</p>
+  <div class="metrics">
+    <div class="metric"><strong>6 sayfa</strong><span>Türkçe ve İngilizce ana sayfa, hakkında, hizmetler</span></div>
+    <div class="metric"><strong>24 kontrol</strong><span>320 / 390 / 742 / 1280 px · yatay taşma yok</span></div>
+    <div class="metric"><strong>7,07:1</strong><span>Ana gövde metni / beyaz zemin kontrastı</span></div>
+  </div>
+  <h2>Neyi, neden değiştirdik?</h2>
+  <table>
+    <thead><tr><th>Bulgu</th><th>Değişiklik</th><th>Gerekçe</th></tr></thead>
+    <tbody>
+      <tr><td>İnce yazılar, küçük alt bilgi ve renk geçişli düğmeler okuma yükünü artırıyordu. İlk önizlemedeki Arial, istenen zarif görünümü vermiyordu.</td><td>Yerel Inter Variable, optik boyutlandırma, 550 ağırlıklı ana başlık ve daha sıkı harf aralığı; 16–19 px gövde metni, lacivert başlıklar ve düz renk düğmeler.</td><td>Okunabilirliği korurken daha rafine bir tipografik kimlik oluşturmak. Font önceden yüklenir; Google Fonts isteği olmadan tüm cihazlara aynı dosya sunulur.</td></tr>
+      <tr><td>390 px mobil ekranda sayfa genişliği 465 px’e taşıyordu.</td><td>Logonun yüzde 200 genişliği kaldırıldı; mobil boşluklar, kartlar ve uzun e-posta adresleri düzenlendi.</td><td>Yatay kaydırma olmadan okunabilir bir mobil görünüm sağlamak.</td></tr>
+      <tr><td>Ana ekran ağırlıklı olarak firma adı ve şehir gösteriyordu.</td><td>Hizmeti açıklayan ana başlık, kısa tanıtım, “Bize Ulaşın” ve “Hizmetlerimiz” seçenekleri.</td><td>Ziyaretçinin ne sunulduğunu ve bir sonraki adımı ilk ekranda anlaması.</td></tr>
+      <tr><td>Hizmet listeleri uzun, tekrarlı ve bazı ifadelerin mesleki kapsamı belirsizdi.</td><td>Dört kısa hizmet özeti, her hizmet için beş maddelik kapsam ve karttan ilgili detay bölümüne bağlantı.</td><td>Bilgiyi taranabilir kılmak. Tasdik, dava yürütme ve sonuç garantisi çağrıştıran ifadeleri daraltmak.</td></tr>
+      <tr><td>9 çalışan, 46 sektör, 200+ mutlu müşteri sayaçlarının güncelliğini gösteren kaynak yoktu.</td><td>Kuruluş yılı, ofis konumu, SMMM unvanı ve dört hizmet alanı gösteriliyor.</td><td>Kaynağı olmayan pazarlama ölçülerini yeni tasarıma taşımamak. Yeni müşteri veya başarı iddiası eklenmedi.</td></tr>
+      <tr><td>Tarihçe küçük yazılar ve geniş boşluklarla uzuyordu; 1977 ve 1983 bağlamı karışıktı.</td><td>Yıl–olay listesi, daha büyük yazılar; kurucunun meslek başlangıcı ve ofisin kuruluşu ayrı anlatılıyor.</td><td>Kurumsal geçmişi daha açık ve erişilebilir sunmak.</td></tr>
+      <tr><td>Başlık hiyerarşisi ve aktif menü işaretleri tutarsızdı.</td><td>Her sayfada tek H1, ekipte H3, doğru aktif sayfa işareti, içeriğe geç bağlantısı, belirgin klavye odağı.</td><td>Sayfa yapısını ekran okuyucu ve klavye kullanıcıları için anlaşılır kılmak.</td></tr>
+    </tbody>
+  </table>
+  <p>İnceleme sonrası tercih: Footer’daki EdgeeTech hazırlayan bağlantısı ve çevresindeki metin önceki 9 px boyutunda korundu. Genel telif metni daha okunaklı boyutta kalıyor. Satırın paragraf genişliği sınırı kaldırılarak yaklaşık 742 px ekranda tek satır ve merkezde görünmesi doğrulandı; hazırlayan ifadesinin kendi içinde bölünmesi engellendi. <a href="screenshots/after-footer-credit.jpg">Güncel footer görüntüsü</a>.</p>
+  <h2>İçerik yaklaşımı</h2>
+  <p>Tipografik seçim: <a href="https://rsms.me/inter/">Inter Variable</a>. Fontun resmi dağıtımındaki 4.1 dosyası yerel olarak barındırılır; SIL Open Font License metni repo içinde korunur. Türkçe karakterler ve gerçek font yüklenmesi tarayıcıda doğrulandı. SF Pro ve Segoe’nun modern arayüz çizgisine yakın bir görsel tercih olarak seçildi; bu firmaların kendi fontu olduğu iddia edilmiyor.</p>
+  <p>Üstünlük, müşteri memnuniyeti ve vergi tasarrufu vaatleri yerine mesleki hizmetlerin kapsamı anlatıldı. İngilizce içerik aynı kapsamı izliyor; SGK gibi Türkiye’ye özgü terimler korundu. Ekibin mevcut isimleri, unvanları, biyografileri ve iletişim bilgileri değiştirilmedi. Tarih ve unvanlar mevcut repo içeriğine dayanıyor; bağımsız yeniden belgelendirme yapılmadı.</p>
+  <p>İletişim metni kısaltıldı ve ilk görüşmede hangi bilgilerin paylaşılabileceği belirtildi. Yeni form veya belge yükleme alanı eklenmedi; hassas mali belgelerin ilk e-postada gönderilmemesi önerildi.</p>
+  <p>Editoryal referans: <a href="https://www.turmob.org.tr/mevzuat/18/yonetmelikler">TÜRMOB’un yönetmelikler dizininde yer alan Haksız Rekabet ve Reklam Yasağı Yönetmeliği</a>. Bu çalışma metni bilgilendirici yönde sadeleştirir; kapsamlı bir mesleki mevzuat uygunluk incelemesi değildir.</p>
+  <h2>Önce / sonra · masaüstü</h2>
+  <div class="compare">
+    <figure><a href="screenshots/before-home-desktop.jpg"><img src="screenshots/before-home-desktop.jpg" alt="Önceki canlı ana sayfa"></a><figcaption>Önce · canlı site. Görseli açarak tam sayfayı inceleyebilirsiniz.</figcaption></figure>
+    <figure><a href="screenshots/after-home-desktop.jpg"><img src="screenshots/after-home-desktop-hero.jpg" alt="Yeni ana sayfa masaüstü önizlemesi"></a><figcaption>Sonra · yerel üretim çıktısı. Lacivert tipografi ve belirgin hizmet anlatımı.</figcaption></figure>
+  </div>
+  <h2>Önce / sonra · mobil</h2>
+  <div class="compare mobile">
+    <figure><a href="screenshots/before-home-mobile.jpg"><img src="screenshots/before-home-mobile.jpg" alt="Önceki mobil görünüm"></a><figcaption>Önce · 390 px ekranda 465 px sayfa genişliği.</figcaption></figure>
+    <figure><a href="screenshots/after-home-mobile.jpg"><img src="screenshots/after-home-mobile-hero.jpg" alt="Yeni mobil görünüm"></a><figcaption>Sonra · 390 px ekranda yatay taşma yok.</figcaption></figure>
+  </div>
+  <h2>Hizmet, ekip ve İngilizce sayfalar</h2>
+  <h3>Ekip kartları · 15 Ekim inceleme güncellemesi</h3>
+  <p>Mobil inceleme düzeltmesi: Ekip kartları Bootstrap kolonları yerine eşit genişlikli CSS grid kullanıyor. Mobil ve tablet portrelerinde contain ile fotoğrafın tamamı gösteriliyor; geniş, kısa bir alana yayılarak yüzlerin kırpılması engellendi. JavaScript ile ekip kartı yüksekliği eşitleme kaldırıldı; grid satırları bunu doğal olarak sağlıyor. 320, 390, 742, 768, 980 ve 1280 px genişliklerde dört Türkçe/İngilizce ekip sayfasında 24 kontrolde tüm kartların genişlikleri eşit, yatay taşma yok. <a href="screenshots/after-team-mobile-wide-fixed.jpg">Geniş mobil görünüm</a> · <a href="screenshots/after-team-hasan-mobile-wide-fixed.jpg">Hasan Kemal portresi</a>.</p>
+  <p>Ekip kartları daha güçlü bir portre alanı, ince altın ayırıcı, sola hizalı isim ve biyografi ile yenilendi. Unvanın ağırlığı azaltıldı; iletişim alanları kartların altına hizalandı. Her kartta aynı e-posta eylemi var; sosyal bağlantılar ayrı düğmelerde gösteriliyor. Mevcut fotoğraflar ve kişi bilgileri korundu, ilk iki portre yüzleri koruyacak şekilde üstten hizalandı. Hover ve klavye odağında hafif yükselme efekti var; azaltılmış hareket tercihi destekleniyor.</p>
+  <figure><img src="screenshots/after-team-cards-desktop.jpg" alt="Yenilenen üç ekip kartı"><figcaption>Yeni ekip kartları · <a href="screenshots/after-team-cards-mobile.jpg">Mobil görünüm</a>. Türkçe ve İngilizce ana sayfa / hakkında sayfasında 320, 390, 768 ve 1280 px genişlikte 16 kontrol; taşma ve bozuk portre yok.</figcaption></figure>
+  <p>Tam sayfa ekran görüntüleri: <a href="screenshots/after-services-desktop.jpg">Hizmetler — masaüstü</a>, <a href="screenshots/after-services-mobile.jpg">Hizmetler — mobil</a>, <a href="screenshots/after-about-desktop.jpg">Hakkımızda, ekip ve tarihçe</a>, <a href="screenshots/after-home-en-desktop.jpg">İngilizce — masaüstü</a>, <a href="screenshots/after-home-en-mobile.jpg">İngilizce — mobil</a>, <a href="screenshots/after-home-services.jpg">Ana sayfa hizmet kartları</a>.</p>
+  <h2>Doğrulama ve sınırlar</h2>
+  <h3>SEO, robot ve agent erişimi · 15 Ekim</h3>
+  <p>Altı sayfanın statik HTML çıktısı, tekil canonical adresleri ve dil eşleştirmeleri doğrulandı. Ortak işletme kimliğine bağlı AccountingService, WebSite, WebPage, BreadcrumbList ve hizmet verileri eklendi. Site haritası build sırasında karşılıklı dil bağlantılarıyla üretiliyor. robots.txt herkese açık içeriği taramaya izin veriyor; llms.txt ana sayfaları ve iletişim bilgilerini kısa bir rehberde topluyor. Yapılandırılmış verilerde açılış saatleri, fiyat, puan veya müşteri değerlendirmesi uydurulmadı.</p>
+  <p>GitHub Pages için noindex içeren statik 404 belgesi eklendi. SEO doğrulaması hem PR kontrolüne hem yayın build’ine bağlandı. Yerel önizlemede robots, sitemap, llms ve 404 dosyaları erişilebilir. Yayından sonra gerçek 404 HTTP durum kodu ve Search Console sitemap gönderimi ayrıca doğrulanmalı. <a href="https://developers.google.com/search/docs/appearance/ai-features">Google’ın AI özellikleri rehberi</a> doğrultusunda özel agent dosyasının sıralama veya AI alıntısı garantisi olduğu iddia edilmiyor.</p>
+  <p>Umami Cloud, hesap limiti nedeniyle kullanıcının talebiyle ertelendi; takip kodu eklenmedi.</p>
+  <table><tbody>
+    <tr><th>Lint ve üretim build’i</th><td>Başarılı. Mevcut eksik CSS kapama parantezi düzeltildi; önceki build uyarısı giderildi.</td></tr>
+    <tr><th>Doğrudan bağlantılar</th><td>Altı üretilmiş sayfada doğru dil ve tek H1; yerel CSS/JS/görsel bağlantılarında eksik dosya yok. Özel alan adı ve kök asset yolları korundu.</td></tr>
+    <tr><th>Tarayıcı etkileşimleri</th><td>Mobil menü açma/kapatma ve bağlantı sonrası kapanma; hakkında sayfasında TR→EN geçişi; TR ve EN şirket kuruluşu kartından ilgili bölüme geçiş; iletişim bağlantısı; klavyeyle içeriğe geçiş doğrulandı. Altı sayfada aktif üst menü doğru.</td></tr>
+    <tr><th>Kontrast</th><td>Seçilen palet çiftlerinde hesaplanan oranlar: başlık/beyaz 14,36:1; gövde/beyaz 7,07:1; vurgu/açık yüzey 5,25:1; düğme 14,36:1; alt bilgi 11,33:1. Tam WCAG uygunluk sertifikası veya tüm sayfa otomatik erişilebilirlik taraması yapılmadı.</td></tr>
+    <tr><th>Bağımlılık denetimi</th><td>Mevcut 14 bulgu: 8 yüksek, 4 orta, 2 düşük; kritik yok. Paketler ve kilit dosyası değiştirilmedi. Bağımlılık güncellemesi bu PR’ın kapsamı dışında.</td></tr>
+    <tr><th>Yayın</th><td>PR incelemesi için hazırlanmıştır. Dönüşüm oranı veya müşteri kazanımı ölçülmedi. Google Maps gibi üçüncü taraf içeriklerin erişilebilirliği ve davranışı ayrı hizmetlere bağlıdır.</td></tr>
+  </tbody></table>
+  <p class="note">Yayın öncesi karar: Sorumlu mali müşavirin sadeleştirilen hizmet kapsamını ve mevcut kurumsal bilgilerin güncelliğini gözden geçirmesi; ardından PR’ın onaylanması. DNS, e-posta, AWS kaynakları ve alan adı yenileme ayarları bu çalışma kapsamında değiştirilmedi.</p>
+</main></body></html>

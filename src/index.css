@@ -353,9 +353,6 @@ body {
   max-width: 540px;
 }
 
-@media (max-width: 991.98px) {
-
-
 @media (min-width: 768px) {
   .about .team-grid {
     display: flex;

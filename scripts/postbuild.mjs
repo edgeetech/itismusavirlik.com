@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 const distDir = new URL('../dist/', import.meta.url)
 const rootPrefixPattern = /(<div id="root" data-server-rendered="true">)([\s\S]*?)(<div class="wrapper">)/
 const seoTagPattern =
-  /<title>[\s\S]*?<\/title>|<meta\s+(?:name="(?:description|keywords|twitter:[^"]+)"|property="og:[^"]+")\s+[^>]*>|<link\s+rel="(?:canonical|alternate)"\s+[^>]*>/g
+  /<title>[\s\S]*?<\/title>|<meta\s+(?:name="(?:description|keywords|robots|twitter:[^"]+)"|property="og:[^"]+")\s+[^>]*>|<link\s+rel="(?:canonical|alternate)"\s+[^>]*>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g
 
 const pages = ['about', 'services', 'en', 'en/about', 'en/services']
 
@@ -57,3 +57,17 @@ for (const page of htmlPages) {
 
   await writeFile(pagePath, updatedHtml, 'utf8')
 }
+
+// Build the sitemap from the same six public routes; no invented modification dates.
+const origin = 'https://www.itismusavirlik.com'
+const routePairs = [['/', '/en/'], ['/about/', '/en/about/'], ['/services/', '/en/services/']]
+const sitemapEntries = routePairs.flatMap(([tr, en]) => [tr, en].map((path) =>
+  `  <url><loc>${origin}${path}</loc>` +
+  `<xhtml:link rel="alternate" hreflang="tr" href="${origin}${tr}"/>` +
+  `<xhtml:link rel="alternate" hreflang="en" href="${origin}${en}"/>` +
+  `<xhtml:link rel="alternate" hreflang="x-default" href="${origin}${tr}"/></url>`,
+))
+await writeFile(new URL('sitemap.xml', distDir),
+  '<?xml version="1.0" encoding="UTF-8"?>\n' +
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+  sitemapEntries.join('\n') + '\n</urlset>\n', 'utf8')
