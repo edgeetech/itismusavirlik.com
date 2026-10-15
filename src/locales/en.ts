@@ -107,7 +107,7 @@ export const en = {
       'We moved to our office in Mutlukent, Çankaya in 2020. From here, we follow financial records, returns and related regulatory processes for businesses.',
     ],
     team: {
-      title: 'Management',
+      title: 'Our Team',
     },
   },
   servicesPage: {

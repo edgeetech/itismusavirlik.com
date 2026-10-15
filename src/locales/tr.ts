@@ -106,7 +106,7 @@ export const tr = {
         '2020 yılında Çankaya Mutlukent’teki ofisimize taşındık. İşletmelerin mali kayıtlarını, beyanlarını ve ilgili mevzuat süreçlerini bu ofisten takip ediyoruz.',
     ],
     team: {
-      title: 'Yönetim',
+      title: 'Ekibimiz',
     },
   },
   servicesPage: {
