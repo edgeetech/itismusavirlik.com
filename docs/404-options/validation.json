@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-15",
+  "branch": "codex/itis-404-character",
+  "lint": "passed",
+  "build": "passed",
+  "seo": "passed",
+  "routes": ["/404.html", "/en/404.html"],
+  "viewportWidths": [320, 390, 742, 1280],
+  "browserCases": 8,
+  "horizontalOverflow": false,
+  "robots": "noindex,follow",
+  "canonical": "omitted on error pages",
+  "sharedLayout": ["Header", "Footer"],
+  "mobileMenu": "expanded and collapsed successfully",
+  "languageSwitch": "/404.html to /en/404.html verified",
+  "randomReloadSamples": ["penguin", "owl", "owl", "owl", "penguin", "owl", "penguin", "sparrow", "sparrow", "sparrow"],
+  "noJavaScriptFallback": "Static HTML includes owl and complete navigation/footer",
+  "removedLine": "Both Turkish and English aside sentences removed",
+  "images": {"format": "WebP", "dimensions": [960, 640], "alphaPreserved": true, "generation": "Built-in imagegen; full prompts in prompts.txt"},
+  "hostingBoundary": "GitHub Pages HTTP 404 behavior requires post-deployment verification; local preview returns HTTP 200 for explicit error documents"
+}

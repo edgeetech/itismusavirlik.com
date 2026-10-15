@@ -39,6 +39,11 @@ const routes: RouteRecord[] = [
         entry: 'src/pages/ServicesPage.tsx',
       },
       {
+        path: '404',
+        element: <NotFoundPage />,
+        entry: 'src/pages/NotFoundPage.tsx',
+      },
+      {
         path: 'en',
         children: [
           {
@@ -55,6 +60,11 @@ const routes: RouteRecord[] = [
             path: 'services',
             element: <ServicesPage />,
             entry: 'src/pages/ServicesPage.tsx',
+          },
+          {
+            path: '404',
+            element: <NotFoundPage />,
+            entry: 'src/pages/NotFoundPage.tsx',
           },
         ],
       },

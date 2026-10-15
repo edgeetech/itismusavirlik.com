@@ -300,6 +300,8 @@ export const en = {
     },
   },
   notFound: {
+    eyebrow: 'A little filing mix-up',
+    imageAlt: 'A bespectacled accountant bird searching for a missing page among folders',
     title: 'Page Not Found',
     description:
       'The page you requested does not exist or may have been moved. You can return to the home page to access current content.',

@@ -67,7 +67,7 @@ export function Seo({ title, description, path, routeKey, keywords, image, schem
       <meta name="description" content={description} />
       <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'} />
       <meta name="keywords" content={keywordValue} />
-      <link rel="canonical" href={canonicalUrl} />
+      {!noindex ? <link rel="canonical" href={canonicalUrl} /> : null}
       <meta property="og:type" content="website" />
       <meta property="og:locale" content={localeMap[language]} />
       <meta

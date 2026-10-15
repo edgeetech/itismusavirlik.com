@@ -299,6 +299,8 @@ export const tr = {
     },
   },
   notFound: {
+    eyebrow: 'Küçük bir dosya karışıklığı',
+    imageAlt: 'Dosyaların arasında aradığı sayfayı bulamayan gözlüklü muhasebeci kuş',
     title: 'Sayfa Bulunamadı',
     description:
       'İstediğiniz sayfa mevcut değil veya taşınmış olabilir. Ana sayfaya dönerek güncel içeriğe ulaşabilirsiniz.',

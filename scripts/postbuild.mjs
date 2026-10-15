@@ -29,6 +29,8 @@ const htmlPages = [
   'en/about/index.html',
   'en/services.html',
   'en/services/index.html',
+  '404.html',
+  'en/404.html',
 ]
 
 for (const page of htmlPages) {
