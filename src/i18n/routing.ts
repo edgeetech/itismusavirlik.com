@@ -49,6 +49,9 @@ function getRouteKeyFromPath(pathname: string): RouteKey | null {
 }
 
 export function getLocalizedPathname(pathname: string, language: AppLanguage) {
+  if (/^\/(?:en\/)?404(?:\.html)?\/?$/.test(pathname)) {
+    return language === 'en' ? '/en/404.html' : '/404.html'
+  }
   const routeKey = getRouteKeyFromPath(pathname)
   return routeKey ? getRoutePath(routeKey, language) : getRoutePath('home', language)
 }

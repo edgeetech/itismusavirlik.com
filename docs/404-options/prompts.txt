@@ -1,0 +1,11 @@
+Method: built-in image_gen. Three independent generations with transparent_background=true.
+Outputs were resized to 960x640 and converted to WebP with alpha preserved; no semantic edits.
+
+OWL
+Use case: illustration-story. Asset: premium Turkish accounting firm's playful 404 web illustration. A charming slightly puzzled accountant OWL wearing small round glasses and a navy waistcoat, peeking between two tall stacks of paper folders, holding a tiny ledger upside down. Warm understated wit, competent yet momentarily lost. Refined editorial 2D illustration, crisp rounded forms, subtle paper texture, limited navy #112c42, warm muted gold #ae9d7a, ivory and pale grey palette. Centered standalone composition with entire bird and folders visible, ample transparent padding, landscape 3:2. No human, no words, no digits, no logos. True transparent background.
+
+SPARROW
+Use case: illustration-story. Asset: premium accounting firm playful 404 page. A curious small SPARROW accountant with round spectacles, a tiny navy necktie, wings splayed in surprise as a fan of folders and receipts gently swirls around it; a calculator sits by its feet. Charming mischievous expression, dignified rather than childish. Polished tactile clay-style 3D illustration with matte surfaces, soft studio lighting. Navy #112c42, warm gold #ae9d7a, ivory and pale grey. Centered standalone entire character composition, generous transparent padding, landscape 3:2. No humans, no text, no letters, no numbers, no logo. True transparent background.
+
+PENGUIN
+Use case: illustration-story. Asset: elegant accounting company's whimsical 404 illustration. A small accountant PENGUIN with round glasses carrying a folder, looking bewildered at a miniature maze made from upright files and neat paper stacks, a blank paper map in one flipper. Humorous quietly clever pose. Refined isometric editorial illustration, clean simple geometry, light texture, high-end corporate personality. Limited navy #112c42, warm muted gold #ae9d7a, ivory and light grey. Entire character and miniature file maze visible as a single centered isolated composition, generous transparent padding, landscape 3:2. No human, no words, numbers or logos. True transparent background.

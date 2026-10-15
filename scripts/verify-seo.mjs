@@ -53,7 +53,19 @@ assert.match(robots, /User-agent: \*\s+Allow: \//)
 assert.ok(robots.includes(`${origin}/sitemap.xml`))
 const guide = await readFile(new URL('llms.txt', dist), 'utf8')
 for (const route of routes) assert.ok(guide.includes(`(${origin}${route})`))
-const notFound = await readFile(new URL('404.html', dist), 'utf8')
-assert.match(notFound, /name="robots" content="noindex,follow"/)
-assert.ok(!notFound.includes('rel="canonical"'))
+for (const file of ['404.html', 'en/404.html']) {
+  const notFound = await readFile(new URL(file, dist), 'utf8')
+  assert.match(notFound, /name="robots" content="noindex,follow"/)
+  assert.ok(!notFound.includes('rel="canonical"'))
+  assert.match(notFound, /<header /)
+  assert.match(notFound, /<footer /)
+  assert.match(notFound, /\/img\/404\/owl.webp/)
+  assert.equal((notFound.match(/<h1[ >]/g) || []).length, 1)
+  assert.ok(!sitemap.includes(`<loc>${origin}/${file}</loc>`))
+}
 console.log('PASS sitemap, robots, agent guide and static 404')
+for (const character of ['owl', 'sparrow', 'penguin']) {
+  const image = await readFile(new URL(`img/404/${character}.webp`, dist))
+  assert.equal(image.subarray(8, 12).toString(), 'WEBP', `${character}: image asset`)
+}
+console.log('PASS all three 404 illustration assets')

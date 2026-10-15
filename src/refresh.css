@@ -103,6 +103,13 @@ img { max-width: 100%; }
 .contact-note { padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--surface); font-size: 15px !important; }
 .contact-details a { display: inline-block; padding: 6px 0; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 .content-offset-top { padding-top: 64px; }
+.not-found-page { padding: 48px 0 64px; background: var(--surface); text-align: center; }
+.not-found-page__code { margin: 0 auto; font-size: 13px; font-weight: 600; letter-spacing: .09em; color: var(--accent); }
+.not-found-page__illustration { display: block; width: min(100%, 460px); height: 280px; object-fit: contain; margin: 12px auto 16px; }
+.not-found-page h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 550; margin: 0 0 14px; }
+.not-found-page p { margin: 0 auto 20px; max-width: 56ch; }
+.not-found-page__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 28px 0 16px; }
+.not-found-page__contact { font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
 .practice-timeline { list-style: none; padding: 0; max-width: 880px; margin: 0 auto; }
 .practice-timeline li { display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
 .practice-timeline time { font-size: 20px; font-weight: 700; color: var(--accent); }

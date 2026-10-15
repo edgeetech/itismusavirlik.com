@@ -23,7 +23,8 @@ to the same business identifier and visible service sections.
 alternates. `public/robots.txt` allows public crawling. `public/llms.txt` is an
 optional public navigation guide, not an indexing or AI citation guarantee.
 Keep it in sync with the visible business information when content changes.
-`public/404.html` supplies GitHub Pages' native error document with noindex;
+The explicit 404 routes generate `dist/404.html` and `dist/en/404.html` with the
+shared navbar/footer and noindex. The root file is GitHub Pages' native error document;
 an SPA fallback that returns successful responses for unknown URLs is not used.
 
 Reference: [Google's AI features guidance](https://developers.google.com/search/docs/appearance/ai-features),
