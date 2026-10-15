@@ -10,7 +10,7 @@ export const en = {
       home: 'Home',
       about: 'About',
       services: 'Services',
-      team: 'Management',
+      team: 'Our Management Team',
       contact: 'Contact',
     },
     actions: {
@@ -95,7 +95,7 @@ export const en = {
       description: 'Explore our services, from accounting records to company formation.',
     },
     team: {
-      title: 'Management',
+      title: 'Our Management Team',
     },
   },
   aboutPage: {
@@ -107,7 +107,7 @@ export const en = {
       'We moved to our office in Mutlukent, Çankaya in 2020. From here, we follow financial records, returns and related regulatory processes for businesses.',
     ],
     team: {
-      title: 'Our Team',
+      title: 'Our Management Team',
     },
   },
   servicesPage: {
@@ -238,16 +238,6 @@ export const en = {
         role: 'Accounting, Finance and Administrative Affairs Manager',
         bio: 'Born in Ankara in 1995, graduated from Gazi University in 2020.',
       },
-      'baris-kus': {
-        name: 'Barış Kuş',
-        role: 'Accounting and Finance Staff',
-        bio: 'Born in Ankara in 1996, graduated from Başkent University in 2021.',
-      },
-      'ahmet-can-demirelli': {
-        name: 'Ahmet Can Demirelli',
-        role: 'Accounting and Finance Staff',
-        bio: 'Born in Ankara in 1998, graduated from Uşak University in 2021.',
-      },
     },
   },
   history: {
@@ -282,6 +272,12 @@ export const en = {
     },
   },
   gallery: {
+    viewer: {
+      open: 'Enlarge photo: {{caption}}',
+      close: 'Close photo',
+      previous: 'Previous photo',
+      next: 'Next photo',
+    },
     sectionTitle: 'Photos From Us',
     sectionDescription: 'We have been doing this work with passion and continuous improvement for years',
     controls: {

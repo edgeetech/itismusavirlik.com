@@ -3,6 +3,7 @@ import { useGalleryItems } from '../../data/gallery'
 import { useLocale } from '../../i18n/useLocale'
 import { withBasePath } from '../../utils/paths'
 import { SectionHeader } from '../common/SectionHeader'
+import { PhotoViewer } from './PhotoViewer'
 
 const MOBILE_BREAKPOINT = 768
 const DESKTOP_BREAKPOINT = 1200
@@ -33,6 +34,7 @@ export function GallerySection() {
   const [slideGap, setSlideGap] = useState(getSlideGap(DESKTOP_BREAKPOINT))
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null)
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,7 +69,7 @@ export function GallerySection() {
   } as CSSProperties
 
   useEffect(() => {
-    if (!shouldAutoplay || isPaused) {
+    if (!shouldAutoplay || isPaused || viewerIndex !== null) {
       return
     }
 
@@ -76,7 +78,7 @@ export function GallerySection() {
     }, AUTOPLAY_DELAY)
 
     return () => window.clearInterval(intervalId)
-  }, [isPaused, maxIndex, shouldAutoplay])
+  }, [isPaused, maxIndex, shouldAutoplay, viewerIndex])
 
   const showPreviousSlide = () => {
     setCurrentIndex((previousIndex) => (previousIndex <= 0 ? maxIndex : previousIndex - 1))
@@ -123,7 +125,14 @@ export function GallerySection() {
                   aria-hidden={index < currentIndex || index >= currentIndex + slidesPerView}
                 >
                   <figure className="gallery-section__card">
-                    <div className="gallery-section__image-frame">
+                    <button
+                      type="button"
+                      className="gallery-section__image-frame gallery-section__open"
+                      onClick={() => setViewerIndex(index)}
+                      aria-label={t('gallery.viewer.open', { caption: item.caption })}
+                      aria-haspopup="dialog"
+                      tabIndex={index < currentIndex || index >= currentIndex + slidesPerView ? -1 : 0}
+                    >
                       <img
                         src={withBasePath(item.src)}
                         alt={item.alt}
@@ -131,7 +140,7 @@ export function GallerySection() {
                         loading="lazy"
                         decoding="async"
                       />
-                    </div>
+                    </button>
                     <figcaption className="gallery-section__caption">{item.alt}</figcaption>
                   </figure>
                 </div>
@@ -166,6 +175,14 @@ export function GallerySection() {
           </div>
         ) : null}
       </div>
+      {viewerIndex !== null ? (
+        <PhotoViewer
+          items={galleryItems}
+          index={viewerIndex}
+          onChange={setViewerIndex}
+          onClose={() => setViewerIndex(null)}
+        />
+      ) : null}
     </div>
   )
 }

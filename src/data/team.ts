@@ -41,18 +41,6 @@ const teamMeta = [
     email: 'bersan@itismusavirlik.com',
     featured: true,
   },
-  {
-    id: 'baris-kus',
-    image: '/img/bariskus.jpg',
-    email: 'baris@itismusavirlik.com',
-    featured: false,
-  },
-  {
-    id: 'ahmet-can-demirelli',
-    image: '/img/ahmetCanDemirelli.jpg',
-    email: 'ahmetcan@itismusavirlik.com',
-    featured: false,
-  },
 ] as const
 
 type TeamTranslation = {

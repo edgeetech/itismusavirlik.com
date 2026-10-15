@@ -10,7 +10,7 @@ export const tr = {
       home: 'Anasayfa',
       about: 'Hakkımızda',
       services: 'Hizmetlerimiz',
-      team: 'Yönetim',
+      team: 'Yönetim Kadromuz',
       contact: 'İletişim',
     },
     actions: {
@@ -94,7 +94,7 @@ export const tr = {
       description: 'Muhasebe kayıtlarından şirket kuruluşuna, hizmetlerimizin kapsamını inceleyin.',
     },
     team: {
-      title: 'Yönetim',
+      title: 'Yönetim Kadromuz',
     },
   },
   aboutPage: {
@@ -106,7 +106,7 @@ export const tr = {
         '2020 yılında Çankaya Mutlukent’teki ofisimize taşındık. İşletmelerin mali kayıtlarını, beyanlarını ve ilgili mevzuat süreçlerini bu ofisten takip ediyoruz.',
     ],
     team: {
-      title: 'Ekibimiz',
+      title: 'Yönetim Kadromuz',
     },
   },
   servicesPage: {
@@ -237,16 +237,6 @@ export const tr = {
         role: 'Muhasebe Mali ve İdari İşler Yöneticisi',
         bio: '1995 Ankara doğumlu, 2020 Gazi Üniversitesi mezunu.',
       },
-      'baris-kus': {
-        name: 'Barış Kuş',
-        role: 'Muhasebe ve Mali İşler Personeli',
-        bio: '1996 Ankara doğumlu, 2021 Başkent Üniversitesi mezunu.',
-      },
-      'ahmet-can-demirelli': {
-        name: 'Ahmet Can Demirelli',
-        role: 'Muhasebe ve Mali İşler Personeli',
-        bio: '1998 Ankara doğumlu, 2021 Uşak Üniversitesi mezunu.',
-      },
     },
   },
   history: {
@@ -281,6 +271,12 @@ export const tr = {
     },
   },
   gallery: {
+    viewer: {
+      open: '{{caption}} fotoğrafını büyüt',
+      close: 'Fotoğrafı kapat',
+      previous: 'Önceki fotoğraf',
+      next: 'Sonraki fotoğraf',
+    },
     sectionTitle: 'Bizden Fotoğraflar',
     sectionDescription: 'Yıllardır bu işi severek ve kendimizi geliştirerek yapıyoruz',
     controls: {
